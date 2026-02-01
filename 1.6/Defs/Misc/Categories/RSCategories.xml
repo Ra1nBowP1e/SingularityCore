@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>RSApparels</defName>
+		<label>megacorp armors</label>
+		<parent>ApparelArmor</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>RSHelmets</defName>
+		<label>megacorp headgears</label>
+		<parent>RSApparels</parent>
+	</ThingCategoryDef>
+
+  
+	<ThingCategoryDef>
+		<defName>YPWeapons</defName>
+		<label>YP weapons</label>
+		<parent>WeaponsRanged</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>JIWeapons</defName>
+		<label>JI weapons</label>
+		<parent>WeaponsRanged</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>TEWeapons</defName>
+		<label>TE weapons</label>
+		<parent>WeaponsRanged</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>GDWeapons</defName>
+		<label>GD weapons</label>
+		<parent>WeaponsRanged</parent>
+	</ThingCategoryDef>
+	
+	<ThingCategoryDef>
+		<defName>GDMulti</defName>
+		<label>GD Multi Launchers</label>
+		<parent>GDWeapons</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>GDMSS</defName>
+		<label>GD Modular Sidearm System</label>
+		<parent>GDWeapons</parent>
+	</ThingCategoryDef>
+	
+	<ThingCategoryDef>
+		<defName>GDMRS</defName>
+		<label>GD Modular Rifle System</label>
+		<parent>GDWeapons</parent>
+	</ThingCategoryDef>
+	
+	
+	<ThingCategoryDef>
+		<defName>MRSKit</defName>
+		<label>Greydale modular conversion kit</label>
+		<parent>Manufactured</parent>
+		<iconPath>UI/Icons/ThingCategories/Manufactured</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>GDMBPS</defName>
+		<label>GD Modular Body Protection System</label>
+		<parent>RSApparels</parent>
+	</ThingCategoryDef>
+	
+
+	<ThingCategoryDef>
+		<defName>GDMBPSH</defName>
+		<label>GD Modular Body Protection System Helmets</label>
+		<parent>RSHelmets</parent>
+	</ThingCategoryDef>
+
+</Defs>

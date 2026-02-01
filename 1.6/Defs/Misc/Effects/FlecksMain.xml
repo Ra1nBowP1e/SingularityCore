@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	<!-- transparent needs renderQueue 2950 to render above anything else -->
+	<!-- singularity large -->
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_CollapseFlash</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.20</fadeInTime>
+		<solidTime>0.05</solidTime>
+		<fadeOutTime>0.35</fadeOutTime>
+		<growthRate>5.00</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/CollapseFlash_a</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>2.00</drawSize>
+		</graphicData>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_CollapseFlashSmall</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.05</fadeInTime>
+		<solidTime>0.05</solidTime>
+		<fadeOutTime>0.40</fadeOutTime>
+		<growthRate>1.50</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/CollapseFlash_a</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.00</drawSize>
+		</graphicData>
+		<useAttachLink>True</useAttachLink>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_CollapseSingularity</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.10</fadeInTime>
+		<solidTime>0.65</solidTime>
+		<fadeOutTime>0.20</fadeOutTime>
+		<growthRate>0.10</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/CollapseSingularity_a</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>4.00</drawSize>
+		</graphicData>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_CollapseRingLarge</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.05</fadeInTime>
+		<solidTime>0.05</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+		<growthRate>-9.00</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/CollapseRing_a</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<drawSize>4.00</drawSize>
+		</graphicData>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>dvd_CollapseStarsRandom</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.10</fadeInTime>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>1.00</fadeOutTime>
+		<growthRate>0.75</growthRate>
+		<randomGraphics>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_a</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_b</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_c</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_d</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_e</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapseStars/CollapseStars_f</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+		</randomGraphics>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckGlowDistortBackground">
+		<defName>dvd_CollapseDistortion</defName>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>0.05</fadeInTime>
+		<solidTime>0.10</solidTime>
+		<fadeOutTime>0.30</fadeOutTime>
+		<growthRate>1.25</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/Black</texPath>
+			<shaderParameters>
+				<_distortionIntensity>0.03</_distortionIntensity>
+				<_brightnessMultiplier>1.10</_brightnessMultiplier>
+			</shaderParameters>
+			<drawSize>2.0</drawSize>
+		</graphicData>
+	</FleckDef>
+	
+
+	<!-- nightlord time -->
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_CollapseSparks</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.30</fadeInTime>
+		<solidTime>0.40</solidTime>
+		<fadeOutTime>0.25</fadeOutTime>
+		<growthRate>0.35</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/CollapseSparks_a</texPath>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>MoteCircularSparks</shaderType>
+			<shaderParameters>
+				<_ExtraTex>/Things/Mote/CollapseSparks_b</_ExtraTex>
+				<_texScale>0.50</_texScale>
+				<_texAScrollSpeed>-0.50</_texAScrollSpeed>
+				<_texBScrollSpeed>-1.00</_texBScrollSpeed>
+				<_Intensity>1</_Intensity>
+			</shaderParameters>
+			<drawSize>2.0</drawSize>
+			<renderQueue>2950</renderQueue>
+		</graphicData>
+	</FleckDef>
+	
+	
+	<!-- dust from the canister -->
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>dvd_CollapsePuffsRandom</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.10</fadeInTime>
+		<solidTime>0.05</solidTime>
+		<fadeOutTime>0.60</fadeOutTime>
+		<growthRate>-0.75</growthRate>
+		<randomGraphics>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapsePuffs/CollapsePuffs_a</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapsePuffs/CollapsePuffs_b</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CollapsePuffs/CollapsePuffs_c</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+		</randomGraphics>
+	</FleckDef>
+	
+	
+	<!-- casing flies off on fire -->
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>dvd_CanisterPiecesRandom</defName>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<fadeInTime>0.10</fadeInTime>
+		<solidTime>0.30</solidTime>
+		<fadeOutTime>0.60</fadeOutTime>
+		<growthRate>-0.20</growthRate>
+		<randomGraphics>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CanisterPieces/CanisterPieces_a</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CanisterPieces/CanisterPieces_b</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/CanisterPieces/CanisterPieces_c</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+			</li>
+		</randomGraphics>
+	</FleckDef>
+	
+	
+	<!-- cell explosion fleck -->
+	<FleckDef ParentName="FleckBase_RandomGraphic">
+		<defName>dvd_BlastCollapse</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.10</fadeInTime>
+		<solidTime>0.00</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+		<randomGraphics>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/BlastCollapse/BlastCollapse_a</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+				<renderInstanced>True</renderInstanced>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/BlastCollapse/BlastCollapse_b</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+				<renderInstanced>True</renderInstanced>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/BlastCollapse/BlastCollapse_c</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+				<renderInstanced>True</renderInstanced>
+			</li>
+		</randomGraphics>
+	</FleckDef>
+	
+	
+	<!-- expanding rings for variant ability -->
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>dvd_RadiantMechanitesRingsRandom</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.05</fadeInTime>
+		<solidTime>0.00</solidTime>
+		<fadeOutTime>0.15</fadeOutTime>
+		<growthRate>11.00</growthRate>
+		<randomGraphics>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/RadiantMechanitesRings/RadiantMechanitesRings_a</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+				<drawSize>2.00</drawSize>
+			</li>
+			<li>
+				<graphicClass>Graphic_Fleck</graphicClass>
+				<texPath>Things/Mote/RadiantMechanitesRings/RadiantMechanitesRings_b</texPath>
+				<shaderType>TransparentPostLight</shaderType>
+				<drawSize>2.00</drawSize>
+			</li>
+		</randomGraphics>
+		<useAttachLink>True</useAttachLink>
+	</FleckDef>
+	
+	
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>dvd_RadiantMechanitesFlash</defName>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<fadeInTime>0.25</fadeInTime>
+		<solidTime>0.05</solidTime>
+		<fadeOutTime>0.65</fadeOutTime>
+		<growthRate>3.00</growthRate>		<!-- bane of my existence -->
+		<graphicData>
+			<texPath>Things/Mote/RadiantMechanitesFlash_a</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>1.00</drawSize>
+		</graphicData>
+		<useAttachLink>True</useAttachLink>
+	</FleckDef>
+	
+	
+	
+</Defs>

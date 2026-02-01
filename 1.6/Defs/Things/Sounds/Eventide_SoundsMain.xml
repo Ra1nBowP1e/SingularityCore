@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+	<SoundDef>
+		<defName>dvd_CollapseLaunch</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>CollapseLaunch</clipPath>
+					</li>
+				</grains>
+				<volumeRange>23~26</volumeRange>
+				<pitchRange>0.94387~1.05946</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>dvd_CollapseLaunchSmall</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>CollapseLaunch</clipPath>
+					</li>
+				</grains>
+				<volumeRange>19~22</volumeRange>
+				<pitchRange>1.03826~1.16541</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+
+	<SoundDef>
+		<defName>dvd_CollapseExplosion</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>CollapseExplosionAlt</clipPath>
+					</li>
+				</grains>
+				<volumeRange>32~34</volumeRange>
+				<pitchRange>0.94387~1.05946</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+
+	<SoundDef>
+		<defName>dvd_LordlyPromiseCast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LordlyPromiseCast</clipPath>
+					</li>
+				</grains>
+				<volumeRange>35~38</volumeRange>
+				<pitchRange>0.97~1.04</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+
+</Defs>

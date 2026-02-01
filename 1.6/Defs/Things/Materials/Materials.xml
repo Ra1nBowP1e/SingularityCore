@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="ResourceBase">
+        <defName>SC_SingularityStones</defName>
+        <label>zero-point energy crystal</label>
+        <description>An ultra-dense crystalline matrix that stabilizes a zero-point energy
+            singularity. It is a fundamental, irreplaceable component for the most advanced
+            spacer-era technologies.</description>
+        <graphicData>
+            <texPath>Things/Materials/APAmmo</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Silver_Drop</soundDrop>
+        <statBases>
+            <MarketValue>850</MarketValue>
+            <Mass>0.1</Mass>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <thingCategories>
+            <li>BuildingArtificial</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+            <li>Component</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SC_DarkMatterAlloy</defName>
+        <label>dark matter alloy</label>
+        <description>A very durable and expensive material. Used to make most advanced apparel and
+            weapons</description>
+        <graphicData>
+            <texPath>Things/Materials/APAbomb</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <color>(0.37, 0.34, 0.65)</color>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Silver_Drop</soundDrop>
+        <statBases>
+            <MarketValue>850</MarketValue>
+            <Mass>0.1</Mass>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+            <StuffPower_Armor_Sharp>2.0</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>2.0</StuffPower_Armor_Blunt>
+            <StuffPower_Armor_Heat>1.5</StuffPower_Armor_Heat>
+            <StuffPower_Insulation_Cold>35</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>50</StuffPower_Insulation_Heat>
+            <SharpDamageMultiplier>1.3</SharpDamageMultiplier>
+            <BluntDamageMultiplier>1.2</BluntDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <stuffAdjective>dark matter alloy</stuffAdjective>
+            <categories>
+                <li>Metallic</li>
+            </categories>
+            <statOffsets>
+                <Beauty>5</Beauty>
+                <Cleanliness>0.5</Cleanliness>
+            </statOffsets>
+            <commonality>0.001</commonality>
+            <color>(95,87,165)</color>
+        </stuffProps>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SC_Mundite</defName>
+        <label>Mundite</label>
+        <description>This is a second-class alloy material allocated for use by Convention member
+            states. It possesses extremely high strength while being almost weightless. Rumors
+            suggest it is refined from the grime produced during shipgirls' bathing routines.</description>
+        <graphicData>
+            <texPath>Things/Materials/KT_steel</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <useHitPoints>false</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <stackLimit>2000</stackLimit>
+        <statBases>
+            <MarketValue>30</MarketValue>
+            <Mass>0.1</Mass>
+            <StuffPower_Armor_Sharp>4</StuffPower_Armor_Sharp>
+            <StuffPower_Armor_Blunt>4</StuffPower_Armor_Blunt>
+            <StuffPower_Armor_Heat>4</StuffPower_Armor_Heat>
+            <StuffPower_Insulation_Cold>80</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>80</StuffPower_Insulation_Heat>
+            <SharpDamageMultiplier>1.5</SharpDamageMultiplier>
+            <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
+        </statBases>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+        <burnableByRecipe>false</burnableByRecipe>
+        <smeltable>true</smeltable>
+        <stuffProps>
+            <categories>
+                <li>Metallic</li>
+            </categories>
+            <appearance>Metal</appearance>
+            <commonality>0.01</commonality>
+            <constructEffect>ConstructMetal</constructEffect>
+            <color>(255,255,255)</color>
+            <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+            <isAirtight>true</isAirtight>
+            <statFactors>
+                <MaxHitPoints>10</MaxHitPoints>
+                <Beauty>4</Beauty>
+                <Flammability>0</Flammability>
+                <WorkToMake>0.1</WorkToMake>
+                <WorkToBuild>0.1</WorkToBuild>
+                <MeleeWeapon_CooldownMultiplier>0.2</MeleeWeapon_CooldownMultiplier>
+            </statFactors>
+        </stuffProps>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <allowedArchonexusCount>80</allowedArchonexusCount>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>VoidMine</defName>
+    <label>虚空提取</label>
+    <description>在虚空提取器中生产资源</description>
+    <driverClass>JobDriver_DoBill</driverClass>
+    <reportString>在虚空提取器中生产资源</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

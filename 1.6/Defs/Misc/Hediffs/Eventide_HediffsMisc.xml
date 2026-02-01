@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	
+	<!-- weapon debuff -->
+	<HediffDef MayRequire="Ludeon.RimWorld.Odyssey">
+		<defName>dvd_Vacshock</defName>
+		<label>vacshock</label>
+		<description>Generalized damage, both to biology and machines, after being subjected to a collapse weapon's payload without the means to withstand the harsh pressure differential. Intensifies with repeated exposure and dissipates over time.</description>
+		<defaultLabelColor>(129, 125, 226)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<alwaysShowSeverity>True</alwaysShowSeverity>
+		<isBad>True</isBad>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.70</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<painOffset>0.04</painOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.30</minSeverity>
+				<label>moderate</label>
+				<painOffset>0.08</painOffset>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>major</label>
+				<painOffset>0.12</painOffset>
+				<statOffsets>
+					<RestFallRateFactor>0.20</RestFallRateFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<vomitMtbDays>4</vomitMtbDays>
+			</li>
+			<li>
+				<minSeverity>0.90</minSeverity>
+				<label>critical</label>
+				<painOffset>0.16</painOffset>
+				<statOffsets>
+					<RestFallRateFactor>0.40</RestFallRateFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+				<vomitMtbDays>2</vomitMtbDays>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	<!-- buff aura from Lordly Promise ability -->
+	<HediffDef>
+		<defName>dvd_LordlyPromise</defName>
+		<label>lordly promise</label>
+		<description>The central figure of a cloud of combat-refining mechanites, maintained by a direct link to a warcasket control module. So long as this person remains close, allies will fight with haste. Otherwise, the mechanites will rapidly lose cohesion and harmlessly dissipate.</description>
+		<defaultLabelColor>(124, 204, 226)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<stages>
+			<li>
+				<statOffsets>
+					<MoveSpeed>0.40</MoveSpeed>
+					<MentalBreakThreshold>-0.03</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<!-- don't put this on the buff, possibly cause strobe effect -->
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>dvd_RadiantMechanitesPeriodicFlash</stateEffecter>
+			</li>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>9.9</range>
+				<mote>dvd_RadiantMechanites_Link</mote>
+				<hideMoteWhenNotDrafted>True</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<onlyTargetColonists>True</onlyTargetColonists>
+					<canTargetBuildings>False</canTargetBuildings>
+					<canTargetAnimals>False</canTargetAnimals>	<!-- maybe change this? -->
+					<canTargetMechs>False</canTargetMechs>
+				</targetingParameters>
+				<hediff>dvd_RadiantMechanites</hediff>
+			</li>
+		</comps>
+		<isBad>False</isBad>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>dvd_RadiantMechanites</defName>
+		<label>radiant mechanites</label>
+		<description>An enhanced state of clarity, induced by stimulating mechanites that have migrated to the nervous system. They notably improve cognitive coordination, wakefulness, and reaction times, which are indispensable boons for battle. Requires proximity to the source of the mechanites.</description>
+		<defaultLabelColor>(124, 204, 226)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<stages>
+			<li>
+				<statFactors>
+					<RestFallRateFactor>0.90</RestFallRateFactor>
+				</statFactors>
+				<statOffsets>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+					<AimingDelayFactor>-0.18</AimingDelayFactor>
+					<MeleeCooldownFactor>-0.12</MeleeCooldownFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>False</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_Link">
+				<requireLinkOnOtherPawn>False</requireLinkOnOtherPawn>
+				<maxDistance>10</maxDistance>
+				<customMote>dvd_RadiantMechanites_Link</customMote>
+			</li>
+		</comps>
+		<isBad>False</isBad>
+	</HediffDef>
+	
+	
+	
+</Defs>

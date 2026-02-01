@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <DesignationCategoryDef>
+        <defName>SC_Designations</defName>
+        <label>singularity tech</label>
+        <description>singularity technologies here</description>
+        <order>100</order>
+    </DesignationCategoryDef>
+</Defs>

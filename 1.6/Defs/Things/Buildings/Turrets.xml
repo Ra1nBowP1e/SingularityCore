@@ -1,0 +1,297 @@
+<Defs>
+    <ThingDef ParentName="BuildingBase" Name="SuvTurret" Abstract="True">
+        <thingClass>Building_TurretGun</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <graphicData>
+            <texPath>Things/Buildings/SurveillanceTurret</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+            <drawOffset>(0,0,-0.1)</drawOffset>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+            </damageData>
+            <shadowData>
+                <offset>(-0.13,-0.87,-0.1)</offset>
+                <volume>(0.5,0.4,1.05)</volume>
+            </shadowData>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>false</rotatable>
+        <size>(2,2)</size>
+        <statBases>
+            <MaxHitPoints>280</MaxHitPoints>
+            <Flammability>0.7</Flammability>
+            <WorkToBuild>17000</WorkToBuild>
+            <Mass>40</Mass>
+            <Beauty>-20</Beauty>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <fillPercent>0.5</fillPercent>
+        <hasTooltip>true</hasTooltip>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <designationCategory>SC_Designations</designationCategory>
+        <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+        <building>
+            <ai_combatDangerous>true</ai_combatDangerous>
+            <turretTopDrawSize>1.5</turretTopDrawSize>
+            <turretTopOffset>(0, 0.05)</turretTopOffset>
+        </building>
+        <placeWorkers>
+            <li>PlaceWorker_TurretTop</li>
+            <li>PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+        <designationHotKey>Misc3</designationHotKey>
+        <uiIconScale>0.90</uiIconScale>
+    </ThingDef>
+
+    <ThingDef ParentName="SuvTurret">
+        <defName>Turret_SuvTurret</defName>
+        <label>kinetic sniper Turret</label>
+        <description>an automated turret armed with a long-range, precision kinetic cannon. While
+            offering excellent range and accuracy, its low durability makes it vulnerable and easily
+            destroyed once engaged. Destruction can result in a Kinetic Impact explosion.</description>
+        <uiIconPath>Things/Buildings/SurveillanceTurret_Icon</uiIconPath>
+        <uiIconScale>0.90</uiIconScale>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <thingCategories>
+            <li>BuildingsSecurity</li>
+        </thingCategories>
+        <statBases>
+            <ShootingAccuracyTurret>1.15</ShootingAccuracyTurret>
+        </statBases>
+        <costList>
+            <Steel>175</Steel>
+            <Plasteel>35</Plasteel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>2</glowRadius>
+                <glowColor>(217,108,228,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>3.5</explosiveRadius>
+                <explosiveDamageType>KineticImpact</explosiveDamageType>
+                <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+            </li>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Shots until barrel change</fuelLabel>
+                <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Plasteel</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>36</fuelCapacity>
+                <initialFuelPercent>1</initialFuelPercent>
+                <autoRefuelPercent>0.1667</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <minimumFueledThreshold>1</minimumFueledThreshold>
+                <atomicFueling>true</atomicFueling>
+                <fuelMultiplier>10</fuelMultiplier>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+                <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+            </li>
+        </comps>
+        <building>
+            <turretGunDef>Gun_SuvTurret</turretGunDef>
+            <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+            <turretBurstWarmupTime>1.5</turretBurstWarmupTime>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+        </building>
+        <researchPrerequisites>
+            <li>KineticTech</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_SuvTurret</defName>
+        <label>impact shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/ImpactL</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Crush</damageDef>
+            <damageAmountBase>20</damageAmountBase>
+            <speed>80</speed>
+        </projectile>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BaseWeaponTurret">
+        <defName>Gun_SuvTurret</defName>
+        <label>kinetic cannon</label>
+        <description>A precision long-ranged kinetic cannon designed to be installed on an automated
+            turret.</description>
+        <graphicData>
+            <texPath>Things/Buildings/SurveillanceGun</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+        </graphicData>
+        <statBases>
+            <AccuracyTouch>0.4</AccuracyTouch>
+            <AccuracyShort>0.65</AccuracyShort>
+            <AccuracyMedium>0.74</AccuracyMedium>
+            <AccuracyLong>0.95</AccuracyLong>
+            <RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Mass>10</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_SuvTurret</defaultProjectile>
+                <warmupTime>5</warmupTime>
+                <range>45</range>
+                <burstShotCount>3</burstShotCount>
+                <ticksBetweenBurstShots>40</ticksBetweenBurstShots>
+                <soundCast>ImpactL</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>10</muzzleFlashScale>
+                <consumeFuelPerShot>1</consumeFuelPerShot>
+            </li>
+        </verbs>
+    </ThingDef>
+
+    <ThingDef ParentName="SuvTurret">
+        <defName>Turret_SupTurret</defName>
+        <label>suppressor turret</label>
+        <description>an automated turret armed with a singularity projector that unleashes powerful
+            area-of-effect attacks, drastically slowing any enemies caught in its field. Destroying
+            the turret may sets off a kinetic-impact explosion.</description>
+        <uiIconPath>Things/Buildings/SurveillanceTurret_Icon</uiIconPath>
+        <uiIconScale>0.90</uiIconScale>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <graphicData>
+            <texPath>Things/Buildings/SuppressorTurret</texPath>
+        </graphicData>
+        <thingCategories>
+            <li>BuildingsSecurity</li>
+        </thingCategories>
+        <statBases>
+            <ShootingAccuracyTurret>0.95</ShootingAccuracyTurret>
+            <MaxHitPoints>450</MaxHitPoints>
+        </statBases>
+        <costList>
+            <Steel>175</Steel>
+            <Plasteel>35</Plasteel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>2</glowRadius>
+                <glowColor>(217,108,228,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>3.5</explosiveRadius>
+                <explosiveDamageType>KineticImpact</explosiveDamageType>
+                <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+            </li>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>350</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Shots until barrel change</fuelLabel>
+                <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Plasteel</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>36</fuelCapacity>
+                <initialFuelPercent>1</initialFuelPercent>
+                <autoRefuelPercent>0.1667</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <minimumFueledThreshold>1</minimumFueledThreshold>
+                <atomicFueling>true</atomicFueling>
+                <fuelMultiplier>10</fuelMultiplier>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+                <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+            </li>
+        </comps>
+        <building>
+            <turretGunDef>Gun_SupTurret</turretGunDef>
+            <turretBurstWarmupTime>3.2</turretBurstWarmupTime>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+        </building>
+        <researchPrerequisites>
+            <li>FocusTech</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_SupTurret</defName>
+        <label>singularity sphere</label>
+        <graphicData>
+            <texPath>Things/Projectile/ImpactC</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+            <flyOverhead>False</flyOverhead>
+            <damageDef>KineticImpact</damageDef>
+            <damageAmountBase>10</damageAmountBase>
+            <explosionRadius>3</explosionRadius>
+            <speed>35</speed>
+        </projectile>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BaseWeaponTurret">
+        <defName>Gun_SupTurret</defName>
+        <label>singularity projector</label>
+        <description>A kinetic cannon designed to be installed on an automated turret.</description>
+        <graphicData>
+            <texPath>Things/Buildings/SuppressorGun</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+        </graphicData>
+        <statBases>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.45</AccuracyShort>
+            <AccuracyMedium>0.29</AccuracyMedium>
+            <AccuracyLong>0.11</AccuracyLong>
+            <RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Mass>10</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_SupTurret</defaultProjectile>
+                <warmupTime>5</warmupTime>
+                <range>29</range>
+                <burstShotCount>3</burstShotCount>
+                <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+                <forcedMissRadius>2</forcedMissRadius>
+                <soundCast>ImpactL</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>10</muzzleFlashScale>
+                <consumeFuelPerShot>1</consumeFuelPerShot>
+            </li>
+        </verbs>
+    </ThingDef>
+</Defs>

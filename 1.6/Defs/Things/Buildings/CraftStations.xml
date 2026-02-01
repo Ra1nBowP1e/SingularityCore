@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <thingDef ParentName="BenchBase">
+        <defName>SC_table</defName>
+        <label>kinetic field manipulator</label>
+        <thingClass>Building_WorkTable</thingClass>
+        <description>A table with equipments for assembling Tisiphone Enterprise equipments.</description>
+        <graphicData>
+            <texPath>Things/Buildings/TETable</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(3.5,1.5)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <costList>
+            <SC_SingularityStones>75</SC_SingularityStones>
+            <SC_DarkMatterAlloy>30</SC_DarkMatterAlloy>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>4500</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <Cleanliness>-2</Cleanliness>
+        </statBases>
+        <size>(3,1)</size>
+        <designationCategory>SC_Designations</designationCategory>
+        <passability>PassThroughOnly</passability>
+        <pathCost>70</pathCost>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>250</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Glower">
+                <glowRadius>5</glowRadius>
+                <glowColor>(150,100,150,0)</glowColor>
+            </li>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <constructEffect>ConstructMetal</constructEffect>
+        <researchPrerequisites>
+            <li>KineticTech</li>
+        </researchPrerequisites>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+    </thingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>SC_AutoVoidMiner</defName>
+        <label>auto void miner</label>
+        <description>auto void miner provides ability to get resources from singularity</description>
+        <thingClass>VoidMinerProject.Building_AutoVoidMiner</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Buildings/AutoVoidMiner_Default</texPath>
+            <drawSize>(3,3)</drawSize>
+            <drawRotated>false</drawRotated>
+            <shadowData>
+                <volume>(0.78, 0.79, 0.13)</volume>
+                <offset>(0,0,-0.43)</offset>
+            </shadowData>
+        </graphicData>
+        <size>(3,3)</size>
+        <altitudeLayer>Building</altitudeLayer>
+        <uiIconPath>Building_Icon_AutoVoidMiner</uiIconPath>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <fillPercent>0.5</fillPercent>
+        <surfaceType>Item</surfaceType>
+        <designationCategory>SC_Designations</designationCategory>
+        <thingCategories>
+            <li>BuildingsProduction</li>
+        </thingCategories>
+        <designationHotKey>Misc12</designationHotKey>
+        <rotatable>false</rotatable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <uiIconOffset>(0, 0.03)</uiIconOffset>
+        <uiIconScale>0.85</uiIconScale>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <building>
+            <uninstallWork>60</uninstallWork>
+            <buildingTags>
+                <li>Production</li>
+            </buildingTags>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <workTableRoomRole>None</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>1.0</workTableNotInRoomRoleFactor>
+        </building>
+        <costList>
+            <SC_SingularityStones>300</SC_SingularityStones>
+            <SC_DarkMatterAlloy>6</SC_DarkMatterAlloy>
+        </costList>
+        <researchPrerequisites>
+            <li>DeepDrilling</li>
+            <li>AdvancedFabrication</li>
+        </researchPrerequisites>
+        <statBases>
+            <MaxHitPoints>400</MaxHitPoints>
+            <WorkToBuild>8000</WorkToBuild>
+            <Flammability>0.3</Flammability>
+            <Beauty>-25</Beauty>
+            <Mass>150</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>1000</basePowerConsumption>
+            </li>
+            <li Class="VoidMinerProject.CompProperties_AutoVoidMiner" />
+        </comps>
+    </ThingDef>
+
+</Defs>

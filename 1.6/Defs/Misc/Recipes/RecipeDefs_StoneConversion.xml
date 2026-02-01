@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- 基础配方：使用石块转换资源 -->
+  <RecipeDef Name="StoneConversionBase" Abstract="True">
+    <jobString>Converting stone chunks to resources.</jobString>
+    <workAmount>4500</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0.3</workSkillLearnFactor>
+    <recipeUsers>
+      <li>TableStonecutter</li>
+    </recipeUsers>
+    <researchPrerequisites>
+    </researchPrerequisites>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- 配方1：石块转钢铁 -->
+  <RecipeDef ParentName="StoneConversionBase">
+    <defName>Make_Steel_From_Chunks</defName>
+    <label>smelt steel from stone chunks (25)</label>
+    <description>Use advanced processing techniques to extract 25 steel from stone chunks.</description>
+    <products>
+      <Steel>25</Steel>
+    </products>
+  </RecipeDef>
+
+  <!-- 配方2：石块转零部件 -->
+  <RecipeDef ParentName="StoneConversionBase">
+    <defName>Make_Component_From_Chunks</defName>
+    <label>craft components from stone chunks (5)</label>
+    <description>Carefully process stone chunks to extract 5 components.</description>
+    <products>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </products>
+  </RecipeDef>
+
+  <!-- 配方3：石块转原木 -->
+  <RecipeDef ParentName="StoneConversionBase">
+    <defName>Make_WoodLog_From_Chunks</defName>
+    <label>process wood from stone chunks (35)</label>
+    <description>Extract organic materials compressed in stone chunks to get 35 wood logs.</description>
+    <products>
+      <WoodLog>35</WoodLog>
+    </products>
+  </RecipeDef>
+
+  <!-- 配方4：石块转燃料 -->
+  <RecipeDef ParentName="StoneConversionBase">
+    <defName>Make_Chemfuel_From_Chunks</defName>
+    <label>refine chemfuel from stone chunks (25)</label>
+    <description>Extract and refine chemical compounds from stone chunks to produce 25 chemfuel.</description>
+    <products>
+      <Chemfuel>25</Chemfuel>
+    </products>
+  </RecipeDef>
+
+  <!-- 配方5：石块转布 -->
+  <RecipeDef ParentName="StoneConversionBase">
+    <defName>Make_Cloth_From_Chunks</defName>
+    <label>weave cloth from stone chunks (20)</label>
+    <description>Extract fibers from stone chunks to weave 20 cloth.</description>
+    <products>
+      <Cloth>20</Cloth>
+    </products>
+  </RecipeDef>
+
+</Defs>

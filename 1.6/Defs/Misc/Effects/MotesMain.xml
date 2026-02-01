@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>dvd_AimingCharges_Collapse</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverheadLow</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>200</solidTime>
+			<fadeOutTime>0.20</fadeOutTime>
+			<needsMaintenance>True</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/AimingCharges/AimingCharges_Collapse_a</texPath>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<shaderType>MoteHellfireCannon_Charge</shaderType>
+			<shaderParameters>
+				<_RandomTex>/Things/Mote/RandomFlicker</_RandomTex>
+				<_FlickerFrequency>0.25</_FlickerFrequency>
+				<_FlickerAmount>0.50</_FlickerAmount>
+				<_InnerCircleIntensity>0.10</_InnerCircleIntensity>
+				<_InnerCircleSize>0.10</_InnerCircleSize>
+				<_InnerCircleShimmerAmount>0.10</_InnerCircleShimmerAmount>
+			</shaderParameters>
+			<drawSize>0.90</drawSize>
+		</graphicData>
+	</ThingDef>
+	
+	
+	<!-- link graphic for Lordly Promise ability -->
+	<ThingDef ParentName="MoteBase">
+		<defName>dvd_RadiantMechanites_Link</defName>
+		<thingClass>MoteDualAttached</thingClass>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<mote>
+			<fadeInTime>0.55</fadeInTime>
+			<fadeOutTime>0.15</fadeOutTime>
+			<solidTime>1200</solidTime>
+			<needsMaintenance>True</needsMaintenance>
+			<rotateTowardsTarget>True</rotateTowardsTarget>
+			<scaleToConnectTargets>True</scaleToConnectTargets>
+		</mote>
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+			<texPath>Things/Mote/RadiantMechanitesLink_a</texPath>
+		</graphicData>
+		<drawOffscreen>True</drawOffscreen>
+	</ThingDef>
+	
+	
+	
+</Defs>

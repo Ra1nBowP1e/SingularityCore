@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <success>Always</success>
+        <mods>
+            <li>Royalty</li>
+            <li>Biotech</li>
+        </mods>
+        <nomatch Class="PatchOperationRemove">
+            <xpath>*/ThingDef[defName = "Apparel_HazardCarapaceH"]/immuneToToxGasExposure</xpath>
+        </nomatch>
+    </Operation>
+</Patch>

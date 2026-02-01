@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	
+	
+	<EffecterDef>
+		<defName>dvd_SingularityNormal</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseSingularity</fleckDef>
+				<scale>1.00</scale>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>True</absoluteAngle>
+				<rotation>0</rotation>
+				<positionOffset>(0, 0, 0.25)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseFlash</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>1.05~1.15</scale>
+				<positionOffset>(0, 0, 0)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseRingLarge</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>2.00~2.15</scale>
+				<positionOffset>(0, 0, 0.25)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseSparks</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>1.00</scale>
+				<positionOffset>(0, 0, 0.25)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseDistortion</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>0.50</scale>
+				<positionOffset>(0, 0, 0.25)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseStarsRandom</fleckDef>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>0.35~0.65</scale>
+				<burstCount>5~7</burstCount>
+				<positionRadiusMin>0.75</positionRadiusMin>
+				<positionRadius>1.25</positionRadius>
+				<positionOffset>(0, 0, 0.25)</positionOffset>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	
+	
+	<EffecterDef>
+		<defName>dvd_LaunchCanister</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>MicroSparksFast</fleckDef>
+				<scale>0.40~0.80</scale>
+				<burstCount>1~2</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>False</absoluteAngle>
+				<angle>-8~8</angle>
+				<speed>3.00~5.00</speed>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+				<color>(212, 171, 226)</color>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>DustPuff</fleckDef>
+				<scale>0.75~1.00</scale>
+				<burstCount>2~3</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>False</absoluteAngle>
+				<angle>-15~15</angle>
+				<speed>1.50~3.00</speed>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CanisterPiecesRandom</fleckDef>
+				<scale>0.60</scale>
+				<burstCount>2</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>False</absoluteAngle>
+				<angle>-20~20</angle>
+				<speed>4.00~5.50</speed>
+				<rotationRate>-720~720</rotationRate>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+				<color>(1, 1, 1, 0.75)</color>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	
+	
+	<EffecterDef>
+		<defName>dvd_CollapseDust</defName>
+		<offsetMode>Free</offsetMode>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>dvd_CollapsePuffsRandom</fleckDef>
+				<scale>0.75~1.00</scale>
+				<burstCount>0~2</burstCount>
+				<ticksBetweenMotes>8</ticksBetweenMotes>
+				<angle>-8~8</angle>
+				<rotationRate>-180~180</rotationRate>
+				<positionRadius>0.35</positionRadius>
+				<speed>0.50~1.00</speed>
+				<absoluteAngle>True</absoluteAngle>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>dvd_CollapseFlashSmall</fleckDef>
+				<scale>1.00</scale>
+				<burstCount>1</burstCount>
+				<ticksBetweenMotes>35</ticksBetweenMotes>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	
+	
+	<EffecterDef>
+		<defName>dvd_RadiantMechanitesRelease</defName>
+		<offsetMode>Free</offsetMode>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>dvd_RadiantMechanitesRingsRandom</fleckDef>
+				<scale>1.00</scale>
+				<burstCount>1</burstCount>
+				<ticksBetweenMotes>14</ticksBetweenMotes>
+				<rotationRate>-90~90</rotationRate>
+				<spawnLocType>OnSource</spawnLocType>
+				<positionOffset>(0, 0, 0.40)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>dvd_CollapseStarsRandom</fleckDef>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>0.70~0.85</scale>
+				<burstCount>0~2</burstCount>
+				<ticksBetweenMotes>4</ticksBetweenMotes>
+				<speed>1.50~2.50</speed>
+				<positionOffset>(0, 0, 0.40)</positionOffset>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseDistortion</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>0.75</scale>
+				<positionOffset>(0, 0, 0.40)</positionOffset>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>dvd_CollapseRingLarge</fleckDef>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<scale>1.25</scale>
+				<positionOffset>(0, 0, 0.40)</positionOffset>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	
+	<!-- buff flashes -->
+	<EffecterDef>
+		<defName>dvd_RadiantMechanitesPeriodicFlash</defName>
+		<offsetMode>Free</offsetMode>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<fleckDef>dvd_RadiantMechanitesFlash</fleckDef>
+				<scale>1.00</scale>
+				<burstCount>1</burstCount>
+				<ticksBetweenMotes>240</ticksBetweenMotes>
+				<spawnLocType>OnSource</spawnLocType>
+				<positionOffset>(0, 0, 0.40)</positionOffset>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	
+	
+</Defs>

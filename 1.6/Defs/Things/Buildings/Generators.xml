@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>PortableReactor</defName>
+        <label>portable reactor</label>
+        <thingClass>Building</thingClass>
+        <thingCategories>
+            <li>BuildingsPower</li>
+        </thingCategories>
+        <designationCategory>SC_Designations</designationCategory>
+
+        <costList>
+            <Steel>200</Steel>
+            <ComponentIndustrial>15</ComponentIndustrial>
+            <Uranium>50</Uranium>
+        </costList>
+
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+
+        <researchPrerequisites>
+            <li>MicroelectronicsBasics</li>
+        </researchPrerequisites>
+
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <graphicData>
+            <texPath>Things/Buildings/Reactor</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <damageData>
+                <rect>(0.3,0,5.4,6)</rect>
+            </damageData>
+            <shadowData>
+                <volume>(0.23, 0.26, 0.23)</volume>
+            </shadowData>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <castEdgeShadows>true</castEdgeShadows>
+        <scatterableOnMapGen>false</scatterableOnMapGen>
+        <fillPercent>0.4</fillPercent>
+        <blockLight>false</blockLight>
+        <statBases>
+            <Mass>25</Mass>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <Beauty>-10</Beauty>
+            <MarketValue>2500</MarketValue>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <description>A small, portable field reactor that produces power by consuming uranium. It is
+            useful when you need a power source that can be deployed quickly. Explodes when
+            destroyed.</description>
+        <size>(1,1)</size>
+        <comps>
+            <li Class="CompProperties_Refuelable">
+                <fuelConsumptionRate>1</fuelConsumptionRate>
+                <fuelCapacity>15.0</fuelCapacity>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Uranium</li>
+                    </thingDefs>
+                </fuelFilter>
+            </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(217,108,228,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>4</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerPlant</compClass>
+                <basePowerConsumption>-2000</basePowerConsumption>
+                <transmitsPower>true</transmitsPower>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+            <li Class="CompProperties_Stunnable">
+                <useLargeEMPEffecter>true</useLargeEMPEffecter>
+                <affectedDamageDefs>
+                    <li>EMP</li>
+                </affectedDamageDefs>
+            </li>
+            <li Class="CompProperties_AmbientSound">
+                <sound>GeothermalPlant_Ambience</sound>
+                <disabledOnUnpowered>true</disabledOnUnpowered>
+            </li>
+        </comps>
+        <rotatable>false</rotatable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <building>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <constructEffect>ConstructMetal</constructEffect>
+    </ThingDef>
+</Defs>

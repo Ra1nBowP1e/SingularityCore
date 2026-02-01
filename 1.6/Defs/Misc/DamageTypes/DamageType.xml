@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<DamageDef ParentName="Bomb">
+		<defName>dvd_CollapseBomb</defName>
+		<label>gravbomb</label>
+		<deathMessage>{0} crumpled within a spatial distortion.</deathMessage>
+		<defaultStoppingPower>3.00</defaultStoppingPower>
+		<buildingDamageFactorImpassable>0.50</buildingDamageFactorImpassable>
+		<buildingDamageFactorPassable>0.75</buildingDamageFactorPassable>
+		<plantDamageFactor>2.00</plantDamageFactor>
+		<additionalHediffs>
+			<li MayRequire="Ludeon.RimWorld.Odyssey">
+				<hediff>dvd_Vacshock</hediff>
+				<severityPerDamageDealt>0.010</severityPerDamageDealt>
+				<victimSeverityScaling>VacuumResistance</victimSeverityScaling>
+				<victimSeverityScalingByInvBodySize>True</victimSeverityScalingByInvBodySize>
+				<inverseStatScaling>True</inverseStatScaling>
+			</li>
+		</additionalHediffs>
+		<soundExplosion>dvd_CollapseExplosion</soundExplosion>
+		<!-- hopefully not necessary -->
+		<explosionCellFleck>dvd_BlastCollapse</explosionCellFleck>
+		<explosionColorCenter>(251, 242, 201, 255)</explosionColorCenter>
+		<explosionColorEdge>(124, 204, 226, 130)</explosionColorEdge>
+	</DamageDef>
+
+</Defs>

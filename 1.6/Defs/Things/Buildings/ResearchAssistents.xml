@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>EccentricAuroraCore</defName>
+        <label>Aurora core</label>
+        <description>An AI mainframe housing a reconstruction of Aurora's persona core. It contains
+            the
+            encrypted database of The Eccentric's advanced technologies and, when connected to a
+            high-tech research bench, allows Eccentric technology to be replicated and
+            produced.\n\nAs a
+            military-grade ship persona, Aurora is capable of connecting to defense grid networks
+            and
+            automatically managing shield configurations. If installed on a gravship with a working
+            pilot console, she can also autonomously operate simple gravships with no chance for
+            mishaps.</description>
+        <thingClass>EccentricTools.Building_AuroraCore</thingClass>
+        <graphicData>
+            <texPath>Things/Buildings/AuroraCore</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>3</drawSize>
+        </graphicData>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <uiIconScale>1</uiIconScale>
+        <researchPrerequisites>
+            <li>Eccentric_Core</li>
+        </researchPrerequisites>
+        <size>(2,2)</size>
+        <rotatable>false</rotatable>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <castEdgeShadows>true</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <designationCategory>SC_Designations</designationCategory>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <canOverlapZones>false</canOverlapZones>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToBuild>10000</WorkToBuild>
+            <Mass>60</Mass>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <costList>
+            <Steel>50</Steel>
+            <Plasteel>50</Plasteel>
+            <Gold>10</Gold>
+            <ComponentSpacer>2</ComponentSpacer>
+            <AIPersonaCore>1</AIPersonaCore>
+        </costList>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+        </building>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>250</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Facility">
+                <statOffsets>
+                    <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+                </statOffsets>
+                <maxSimultaneous>1</maxSimultaneous>
+            </li>
+            <li Class="EccentricDefenseGrid.CompProperties_DefenseConduit"
+                MayRequire="Aelanna.EccentricTech.DefenseGrid" />
+            <li Class="EccentricDefenseGrid.CompProperties_DefenseConsole"
+                MayRequire="Aelanna.EccentricTech.DefenseGrid" />
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    </ThingDef>
+
+</Defs>

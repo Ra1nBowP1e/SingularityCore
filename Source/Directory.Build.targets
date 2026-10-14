@@ -1,0 +1,5 @@
+<Project>
+  <Target Name="DeployModAssembly" AfterTargets="Build" Condition="'$(DeployModAssemblies)' == 'true'">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(MSBuildThisFileDirectory)../Assemblies" />
+  </Target>
+</Project>

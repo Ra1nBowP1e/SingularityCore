@@ -1,0 +1,32 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(HOME)/.local/share/Steam/steamapps/common/RimWorld</RimWorldDir>
+    <RimWorldManagedDir Condition="'$(RimWorldManagedDir)' == '' and Exists('$(RimWorldDir)/RimWorldLinux_Data/Managed')">$(RimWorldDir)/RimWorldLinux_Data/Managed</RimWorldManagedDir>
+    <RimWorldManagedDir Condition="'$(RimWorldManagedDir)' == ''">$(RimWorldDir)/RimWorldWin64_Data/Managed</RimWorldManagedDir>
+    <FrameworkPathOverride>$(RimWorldManagedDir)</FrameworkPathOverride>
+    <EnableFrameworkPathOverride>true</EnableFrameworkPathOverride>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netstandard" HintPath="$(RimWorldManagedDir)/netstandard.dll" Private="false" />
+    <Reference Include="Assembly-CSharp" HintPath="$(RimWorldManagedDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(RimWorldManagedDir)/UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="UnityEngine.IMGUIModule" HintPath="$(RimWorldManagedDir)/UnityEngine.IMGUIModule.dll" Private="false" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(RimWorldManagedDir)/UnityEngine.TextRenderingModule.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="CheckRimWorldVersion" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(RimWorldManagedDir)/Assembly-CSharp.dll')" Text="Set RimWorldDir or RimWorldManagedDir to an installed RimWorld 1.6 directory." />
+    <ReadLinesFromFile File="$(RimWorldDir)/Version.txt" Condition="Exists('$(RimWorldDir)/Version.txt')">
+      <Output TaskParameter="Lines" ItemName="RimWorldVersion" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <SelectedRimWorldVersion>@(RimWorldVersion)</SelectedRimWorldVersion>
+    </PropertyGroup>
+    <Error Condition="'$(SelectedRimWorldVersion)' != '' and !$([System.String]::Copy('$(SelectedRimWorldVersion)').StartsWith('1.6.'))" Text="This branch targets RimWorld 1.6. Selected installation is @(RimWorldVersion)." />
+  </Target>
+</Project>

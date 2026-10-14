@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <SC_AddAndStartProduction>Добавить и начать</SC_AddAndStartProduction>
+    <SC_AllModsLabel>Все моды</SC_AllModsLabel>
+    <SC_AllProducibleItemsCount>Предметов: {0}; разрешено: {1}</SC_AllProducibleItemsCount>
+    <SC_AvailableModsLabel>Доступные источники</SC_AvailableModsLabel>
+    <SC_ClickToSelectProductionTarget>Выберите предмет для производства</SC_ClickToSelectProductionTarget>
+    <SC_ContinuousProduction>Непрерывно</SC_ContinuousProduction>
+    <SC_ContinuousProductionStatus>Непрерывное производство</SC_ContinuousProductionStatus>
+    <SC_Count>Количество</SC_Count>
+    <SC_CurrentStatus>Состояние</SC_CurrentStatus>
+    <SC_CurrentTarget>Предмет: {0}</SC_CurrentTarget>
+    <SC_EccentricCore_AutomatedLaunch>Аврора: запуск гравикорабля</SC_EccentricCore_AutomatedLaunch>
+    <SC_EccentricCore_AutomatedLaunchDesc>Поручить Авроре управление гравикораблём. Требуются работающие ядро Авроры и консоль пилота.</SC_EccentricCore_AutomatedLaunchDesc>
+    <SC_EccentricCore_AutomatedLaunchNoConsole>Нет подключённой консоли пилота.</SC_EccentricCore_AutomatedLaunchNoConsole>
+    <SC_EccentricCore_AutomatedLaunchRejected>Запуск невозможен: {0}</SC_EccentricCore_AutomatedLaunchRejected>
+    <SC_ExpectedOutput>За цикл: {0}</SC_ExpectedOutput>
+    <SC_FromModLabel>Источник: {0}</SC_FromModLabel>
+    <SC_GlobalOutputMultiplierLabel>Множитель выпуска</SC_GlobalOutputMultiplierLabel>
+    <SC_GlobalTimeMultiplierLabel>Множитель времени производства</SC_GlobalTimeMultiplierLabel>
+    <SC_ItemAllowed>Разрешено</SC_ItemAllowed>
+    <SC_ItemCanAdd>Можно добавить</SC_ItemCanAdd>
+    <SC_MaintainQuantity>Поддерживать запас</SC_MaintainQuantity>
+    <SC_MaintainQuantityStatus>Поддержание запаса</SC_MaintainQuantityStatus>
+    <SC_ModSelectionTitle>Выбор источника</SC_ModSelectionTitle>
+    <SC_NeedToSetProductionMaterial>Сначала выберите предмет для производства.</SC_NeedToSetProductionMaterial>
+    <SC_NoProductionTarget>Предмет не выбран</SC_NoProductionTarget>
+    <SC_OutputLabel>Выпуск:</SC_OutputLabel>
+    <SC_OutputMinLabel>Минимальный выпуск</SC_OutputMinLabel>
+    <SC_PauseProduction>Пауза</SC_PauseProduction>
+    <SC_PausedWithProgress>Приостановлено: {0:P1}</SC_PausedWithProgress>
+    <SC_ProducibleItemsTitle>Разрешённые предметы</SC_ProducibleItemsTitle>
+    <SC_ProductAddedToAllowed>{0} добавлен в список разрешённых предметов.</SC_ProductAddedToAllowed>
+    <SC_ProductionControl>Режим:</SC_ProductionControl>
+    <SC_ProductionTargetSet>Предмет для производства: {0}</SC_ProductionTargetSet>
+    <SC_ProductionTargetWindowTitle>Производство Void Miner</SC_ProductionTargetWindowTitle>
+    <SC_ProductionTimeLabel>Время цикла: {0}</SC_ProductionTimeLabel>
+    <SC_ProgressWithRemaining>{0:P1}; осталось: {1}</SC_ProgressWithRemaining>
+    <SC_RemainingTime>осталось: </SC_RemainingTime>
+    <SC_ResetToDefaultsButton>Сбросить настройки</SC_ResetToDefaultsButton>
+    <SC_ResumeProduction>Продолжить</SC_ResumeProduction>
+    <SC_VoidMinerOutputBlocked>Освободите место рядом с Void Miner и продолжите производство, чтобы выгрузить готовые предметы.</SC_VoidMinerOutputBlocked>
+    <SC_Search>Поиск:</SC_Search>
+    <SC_SearchAndAddItems>Ищите доступные предметы и добавляйте их в производство.</SC_SearchAndAddItems>
+    <SC_SearchResultsCount>Найдено: {0}; точных: {1}; по началу: {2}; разрешено: {3}</SC_SearchResultsCount>
+    <SC_SelectProductionTarget>Выбрать предмет</SC_SelectProductionTarget>
+    <SC_SelectProductionTargetDesc>Выбрать предмет, режим производства и количество.</SC_SelectProductionTargetDesc>
+    <SC_SingleGeneGenepackDescription>Генопакет с геном «{0}».
+
+{1}</SC_SingleGeneGenepackDescription>
+    <SC_SingleGeneGenepackLabel>Генопакет ({0})</SC_SingleGeneGenepackLabel>
+    <SC_SingleProduction>Заданное число циклов</SC_SingleProduction>
+    <SC_SingleProductionStatus>Заданное число циклов</SC_SingleProductionStatus>
+    <SC_StartProduction>Начать</SC_StartProduction>
+    <SC_StatusPaused>Приостановлено</SC_StatusPaused>
+    <SC_StatusProducing>Производство</SC_StatusProducing>
+    <SC_StatusStopped>Остановлено</SC_StatusStopped>
+    <SC_StopProduction>Остановить</SC_StopProduction>
+    <SC_TimeFormatDays>{0} д</SC_TimeFormatDays>
+    <SC_TimeFormatDaysHours>{0} д {1} ч</SC_TimeFormatDaysHours>
+    <SC_TimeFormatHours>{0} ч</SC_TimeFormatHours>
+    <SC_ValueLabel>Стоимость:</SC_ValueLabel>
+    <SC_VoidMinerSettingsCategory>Singularity: Core</SC_VoidMinerSettingsCategory>
+    <SC_WorkAmountLabel>Работа:</SC_WorkAmountLabel>
+</LanguageData>

@@ -9,9 +9,7 @@
             encrypted database of The Eccentric's advanced technologies and, when connected to a
             high-tech research bench, allows Eccentric technology to be replicated and
             produced.\n\nAs a
-            military-grade ship persona, Aurora is capable of connecting to defense grid networks
-            and
-            automatically managing shield configurations. If installed on a gravship with a working
+            military-grade ship persona, Aurora can assist with advanced research. If installed on a gravship with a working
             pilot console, she can also autonomously operate simple gravships with no chance for
             mishaps.</description>
         <thingClass>EccentricTools.Building_AuroraCore</thingClass>
@@ -68,10 +66,6 @@
                 </statOffsets>
                 <maxSimultaneous>1</maxSimultaneous>
             </li>
-            <li Class="EccentricDefenseGrid.CompProperties_DefenseConduit"
-                MayRequire="Aelanna.EccentricTech.DefenseGrid" />
-            <li Class="EccentricDefenseGrid.CompProperties_DefenseConsole"
-                MayRequire="Aelanna.EccentricTech.DefenseGrid" />
         </comps>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>

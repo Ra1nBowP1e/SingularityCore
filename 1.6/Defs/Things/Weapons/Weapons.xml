@@ -2,7 +2,7 @@
 <Defs>
 
 
-    <thingDef Name="BaseTEGun" Abstract="True" ParentName="BaseWeapon">
+    <ThingDef Name="BaseTEGun" Abstract="True" ParentName="BaseWeapon">
         <techLevel>Spacer</techLevel>
         <smeltable>true</smeltable>
         <thingCategories>
@@ -39,12 +39,12 @@
             </recipeUsers>
             <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
         </recipeMaker>
-    </thingDef>
+    </ThingDef>
 
 
     <!-- ============================================== -->
 
-    <thingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
         <defName>Bullet_Tyrant</defName>
         <label>impact shell</label>
         <graphicData>
@@ -57,9 +57,9 @@
             <speed>75</speed>
             <stoppingPower>2</stoppingPower>
         </projectile>
-    </thingDef>
+    </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_KineticRifle</defName>
         <label>kinetic rifle</label>
         <description>Tisiphone Enterprise Type-3 "Tyrant" kinetic blast rifle.
@@ -82,7 +82,7 @@
             <texPath>Things/Weapons/Tyrant</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <weaponTags>
             <li>SpacerGun</li>
         </weaponTags>
@@ -108,16 +108,16 @@
                 <warmupTime>0.5</warmupTime>
                 <range>26</range>
                 <burstShotCount>1</burstShotCount>
-                <soundCast>ImpactM</soundCast>
+                <soundCast>Shot_ChargeRifle</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>8</muzzleFlashScale>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
     <!-- ============================================== -->
 
-    <thingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
         <defName>Bullet_Tormentor</defName>
         <label>impact shell</label>
         <graphicData>
@@ -130,9 +130,9 @@
             <speed>75</speed>
             <stoppingPower>2</stoppingPower>
         </projectile>
-    </thingDef>
+    </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_KineticPistol</defName>
         <label>kinetic pistol</label>
         <description>Tisiphone Enterprise Type-6 “Tormentor” Kinetic Blast Pistol
@@ -153,7 +153,7 @@
             <texPath>Things/Weapons/Tormentor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <weaponTags>
             <li>Shield_Sidearm</li>
             <li>SpacerGun</li>
@@ -183,16 +183,16 @@
                 <warmupTime>0.35</warmupTime>
                 <range>18</range>
                 <burstShotCount>1</burstShotCount>
-                <soundCast>ImpactM</soundCast>
+                <soundCast>Shot_ChargeRifle</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>8</muzzleFlashScale>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
     <!-- ============================================== -->
 
-    <thingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
         <defName>Bullet_Oppressor</defName>
         <label>kinetic canister</label>
         <graphicData>
@@ -202,14 +202,14 @@
         <thingClass>Projectile_Explosive</thingClass>
         <projectile>
             <flyOverhead>False</flyOverhead>
-            <damageDef>KineticImpact</damageDef>
+            <damageDef>SC_KineticImpact</damageDef>
             <damageAmountBase>15</damageAmountBase>
             <explosionRadius>1</explosionRadius>
             <speed>50</speed>
         </projectile>
-    </thingDef>
+    </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_ThuddGun</defName>
         <label>thudd gun</label>
         <description>Tisiphone Enterprise Type-11 “Oppressor” Kinetic Canister Launcher
@@ -232,7 +232,7 @@
             <texPath>Things/Weapons/Oppressor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <weaponClasses>
             <li>ShortShots</li>
         </weaponClasses>
@@ -258,17 +258,17 @@
                 <defaultProjectile>Bullet_Oppressor</defaultProjectile>
                 <warmupTime>1</warmupTime>
                 <range>19</range>
-                <soundCast>ImpactB</soundCast>
+                <soundCast>Shot_ChargeBlaster</soundCast>
                 <burstShotCount>1</burstShotCount>
                 <soundCastTail>GunTail_Heavy</soundCastTail>
                 <muzzleFlashScale>12</muzzleFlashScale>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
     <!-- ============================================== -->
 
-    <thingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
         <defName>Bullet_Wailer</defName>
         <label>impact shell</label>
         <graphicData>
@@ -281,9 +281,9 @@
             <speed>80</speed>
             <stoppingPower>2</stoppingPower>
         </projectile>
-    </thingDef>
+    </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_KineticLongRifle</defName>
         <label>kinetic long rifle</label>
         <description>Tisiphone Enterprise Type-4 “Wailer” Kinetic Blast Rifle
@@ -304,7 +304,7 @@
             <texPath>Things/Weapons/Wailer</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <equippedAngleOffset>45</equippedAngleOffset>
         <weaponClasses>
             <li>RangedHeavy</li>
@@ -331,13 +331,13 @@
                 <defaultProjectile>Bullet_Wailer</defaultProjectile>
                 <warmupTime>2.1</warmupTime>
                 <range>38</range>
-                <soundCast>ImpactL</soundCast>
+                <soundCast>Shot_SniperRifle</soundCast>
                 <burstShotCount>1</burstShotCount>
                 <soundCastTail>GunTail_Heavy</soundCastTail>
                 <muzzleFlashScale>12</muzzleFlashScale>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
     <!-- ============================================== -->
 
@@ -372,7 +372,7 @@
         </comps>
     </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_StormCannon</defName>
         <label>singularity projector</label>
         <description>Tisiphone Enterprise Type-22 “Atrocity” Area Suppression System
@@ -398,7 +398,7 @@
         <weaponClasses>
             <li>RangedHeavy</li>
         </weaponClasses>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <equippedAngleOffset>45</equippedAngleOffset>
         <recipeMaker>
             <researchPrerequisite>FocusTech</researchPrerequisite>
@@ -425,6 +425,7 @@
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
+                <forcedMissRadius>0.5</forcedMissRadius>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <defaultProjectile>dvd_CollapseProjectile</defaultProjectile>
@@ -438,28 +439,28 @@
                 <aimingChargeMoteOffset>1.25</aimingChargeMoteOffset>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
     <!-- ============================================== -->
 
-    <thingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
         <defName>Bullet_Harrower</defName>
         <label>kinetic energy</label>
         <graphicData>
-            <texPath>Things/Projectile/Harrower</texPath>
+            <texPath>Things/Projectile/ImpactB</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <thingClass>Projectile_Explosive</thingClass>
         <projectile>
             <flyOverhead>False</flyOverhead>
-            <damageDef>KineticImpact</damageDef>
+            <damageDef>SC_KineticImpact</damageDef>
             <damageAmountBase>6</damageAmountBase>
             <explosionRadius>0.5</explosionRadius>
             <speed>300</speed>
         </projectile>
-    </thingDef>
+    </ThingDef>
 
-    <thingDef ParentName="BaseTEGun">
+    <ThingDef ParentName="BaseTEGun">
         <defName>TE_KineticLance</defName>
         <label>kinetic lance</label>
         <description>Tisiphone Enterprise Type-0 “Harrower” Directional Kinetic Wave Projector
@@ -490,7 +491,7 @@
             <li>RangedHeavy</li>
             <li>ShortShots</li>
         </weaponClasses>
-        <soundInteract>InteractTEWeapons</soundInteract>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
         <equippedAngleOffset>45</equippedAngleOffset>
         <recipeMaker>
             <researchPrerequisite>FocusTech</researchPrerequisite>
@@ -523,13 +524,13 @@
                 <defaultProjectile>Bullet_Harrower</defaultProjectile>
                 <warmupTime>3</warmupTime>
                 <range>22</range>
-                <soundCast>SoundHarrower</soundCast>
+                <soundCast>Shot_ChargeBlaster</soundCast>
                 <burstShotCount>18</burstShotCount>
                 <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
                 <soundCastTail>GunTail_Heavy</soundCastTail>
                 <muzzleFlashScale>18</muzzleFlashScale>
             </li>
         </verbs>
-    </thingDef>
+    </ThingDef>
 
 </Defs>

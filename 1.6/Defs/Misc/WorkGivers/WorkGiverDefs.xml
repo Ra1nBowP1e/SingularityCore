@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <WorkGiverDef>
-    <defName>VoidMine</defName>
-    <label>void mine</label>
-    <giverClass>WorkGiver_DoBill</giverClass>
-    <workType>Mining</workType>
-    <priorityInType>100</priorityInType>
-    <fixedBillGiverDefs>
-      <li>VoidMiner</li>
-    </fixedBillGiverDefs>
-    <verb>craft</verb>
-    <gerund>void crafting</gerund>
-    <tagToGive>Fieldwork</tagToGive>
-    <requiredCapacities>
-      <li>Manipulation</li>
-    </requiredCapacities>
-    <canBeDoneByMechs>true</canBeDoneByMechs>
-  </WorkGiverDef>
+    <WorkGiverDef>
+        <defName>SC_OperateAtomicManipulator</defName>
+        <label>Operate Machine</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>Crafting</workType>
+        <priorityInType>140</priorityInType>
+        <fixedBillGiverDefs>
+            <li>SC_Workbench</li>
+        </fixedBillGiverDefs>
+        <verb>Operate</verb>
+        <gerund>Operating at</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
 
   <WorkGiverDef>
     <defName>DoBillsSCTable</defName>

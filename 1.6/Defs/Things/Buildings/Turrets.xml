@@ -75,7 +75,7 @@
             </li>
             <li Class="CompProperties_Explosive">
                 <explosiveRadius>3.5</explosiveRadius>
-                <explosiveDamageType>KineticImpact</explosiveDamageType>
+                <explosiveDamageType>SC_KineticImpact</explosiveDamageType>
                 <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
             </li>
             <li Class="CompProperties_Forbiddable" />
@@ -160,7 +160,7 @@
                 <range>45</range>
                 <burstShotCount>3</burstShotCount>
                 <ticksBetweenBurstShots>40</ticksBetweenBurstShots>
-                <soundCast>ImpactL</soundCast>
+                <soundCast>Shot_SniperRifle</soundCast>
                 <soundCastTail>GunTail_Heavy</soundCastTail>
                 <muzzleFlashScale>10</muzzleFlashScale>
                 <consumeFuelPerShot>1</consumeFuelPerShot>
@@ -174,7 +174,7 @@
         <description>an automated turret armed with a singularity projector that unleashes powerful
             area-of-effect attacks, drastically slowing any enemies caught in its field. Destroying
             the turret may sets off a kinetic-impact explosion.</description>
-        <uiIconPath>Things/Buildings/SurveillanceTurret_Icon</uiIconPath>
+        <uiIconPath>Things/Buildings/SuppressorTurret_Icon</uiIconPath>
         <uiIconScale>0.90</uiIconScale>
         <minifiedDef>MinifiedThing</minifiedDef>
         <graphicData>
@@ -200,7 +200,7 @@
             </li>
             <li Class="CompProperties_Explosive">
                 <explosiveRadius>3.5</explosiveRadius>
-                <explosiveDamageType>KineticImpact</explosiveDamageType>
+                <explosiveDamageType>SC_KineticImpact</explosiveDamageType>
                 <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
             </li>
             <li Class="CompProperties_Forbiddable" />
@@ -250,7 +250,7 @@
         <thingClass>Projectile_Explosive</thingClass>
         <projectile>
             <flyOverhead>False</flyOverhead>
-            <damageDef>KineticImpact</damageDef>
+            <damageDef>SC_KineticImpact</damageDef>
             <damageAmountBase>10</damageAmountBase>
             <explosionRadius>3</explosionRadius>
             <speed>35</speed>
@@ -287,7 +287,7 @@
                 <burstShotCount>3</burstShotCount>
                 <ticksBetweenBurstShots>30</ticksBetweenBurstShots>
                 <forcedMissRadius>2</forcedMissRadius>
-                <soundCast>ImpactL</soundCast>
+                <soundCast>Shot_SniperRifle</soundCast>
                 <soundCastTail>GunTail_Heavy</soundCastTail>
                 <muzzleFlashScale>10</muzzleFlashScale>
                 <consumeFuelPerShot>1</consumeFuelPerShot>

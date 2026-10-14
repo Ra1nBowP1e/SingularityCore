@@ -19,7 +19,7 @@
             <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <thingCategories>
-            <li>BuildingArtificial</li>
+            <li>Manufactured</li>
         </thingCategories>
         <tradeTags>
             <li>ExoticMisc</li>

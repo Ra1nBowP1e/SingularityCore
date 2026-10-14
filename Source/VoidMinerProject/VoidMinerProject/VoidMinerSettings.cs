@@ -19,6 +19,10 @@ public class VoidMinerSettings : ModSettings
 
 	private static string _lastSearchText = null;
 
+	private List<ThingDef> allowedDefsCache;
+	private List<ThingDef> producibleDefsCache;
+	private bool needsGeneDefaults = true;
+
 	private static List<ThingDef> _lastSearchResult = null;
 
 	public float globalOutputMultiplier = 1f;
@@ -81,56 +85,30 @@ public class VoidMinerSettings : ModSettings
 
 	private void InitializeDefaultSettings()
 	{
-		if (allowedProducts == null)
+		allowedProducts = new List<string>(DefaultAllowedProducts);
+	}
+
+	public void InitializeAfterDefsLoaded()
+	{
+		if (needsGeneDefaults)
 		{
-			allowedProducts = new List<string>();
+			UpdateAllSingleGeneGenepacks();
+			needsGeneDefaults = false;
 		}
-		if (allowedProducts.Count == 0)
-		{
-			allowedProducts.AddRange(DefaultAllowedProducts);
-			if (!IsBiotechEnabled)
-			{
-				return;
-			}
-			List<GeneDef> allDefsListForReading = DefDatabase<GeneDef>.AllDefsListForReading;
-			if (allDefsListForReading.NullOrEmpty())
-			{
-				return;
-			}
-			{
-				foreach (GeneDef item3 in allDefsListForReading)
-				{
-					string item = "genepack_" + item3.defName;
-					if (!allowedProducts.Contains(item))
-					{
-						allowedProducts.Add(item);
-					}
-				}
-				return;
-			}
-		}
-		if (!IsBiotechEnabled)
-		{
-			return;
-		}
-		List<GeneDef> allDefsListForReading2 = DefDatabase<GeneDef>.AllDefsListForReading;
-		if (allDefsListForReading2.NullOrEmpty())
-		{
-			return;
-		}
-		foreach (GeneDef item4 in allDefsListForReading2)
-		{
-			string item2 = "genepack_" + item4.defName;
-			if (!allowedProducts.Contains(item2))
-			{
-				allowedProducts.Add(item2);
-			}
-		}
+		InvalidateProductCaches();
+	}
+
+	private void InvalidateProductCaches()
+	{
+		allowedDefsCache = null;
+		_searchCache.Clear();
+		_lastSearchText = null;
+		_lastSearchResult = null;
 	}
 
 	public bool IsProductAllowed(ThingDef product)
 	{
-		return allowedProducts.Contains(product.defName);
+		return product != null && allowedProducts.Contains(product.defName);
 	}
 
 	public void AddAllowedProduct(string productDefName)
@@ -138,6 +116,7 @@ public class VoidMinerSettings : ModSettings
 		if (!allowedProducts.Contains(productDefName))
 		{
 			allowedProducts.Add(productDefName);
+			NotifySettingsChanged();
 		}
 	}
 
@@ -164,37 +143,39 @@ public class VoidMinerSettings : ModSettings
 
 	public void RemoveAllowedProduct(string productDefName)
 	{
-		allowedProducts.Remove(productDefName);
+		if (allowedProducts.Remove(productDefName))
+		{
+			NotifySettingsChanged();
+		}
+	}
+
+	public ThingDef ResolveProduct(string defName)
+	{
+		if (string.IsNullOrEmpty(defName)) return null;
+		ThingDef registered = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
+		if (registered != null) return registered;
+		return CreateSingleGeneGenepackItems().FirstOrDefault(def => def.defName == defName);
 	}
 
 	public List<ThingDef> GetAllowedProductDefs()
 	{
-		List<ThingDef> list = new List<ThingDef>();
-		List<ThingDef> list2 = CreateSingleGeneGenepackItems();
-		foreach (string defName in allowedProducts)
+		if (allowedDefsCache == null)
 		{
-			ThingDef named = DefDatabase<ThingDef>.GetNamed(defName, errorOnFail: false);
-			if (named != null)
-			{
-				list.Add(named);
-				continue;
-			}
-			ThingDef thingDef = list2.FirstOrDefault((ThingDef def) => def.defName == defName);
-			if (thingDef != null)
-			{
-				list.Add(thingDef);
-			}
+			allowedDefsCache = allowedProducts.Select(ResolveProduct)
+				.Where(def => def != null).Distinct().ToList();
 		}
-		return list;
+		return allowedDefsCache;
 	}
 
 	public List<ThingDef> GetProducibleItems()
 	{
+		if (producibleDefsCache != null) return producibleDefsCache;
 		List<ThingDef> list = (from td in DefDatabase<ThingDef>.AllDefs
 			where td.category == ThingCategory.Item && !td.IsPlant && !td.IsCorpse && !td.IsFilth && td.BaseMarketValue > 0f && !string.IsNullOrEmpty(td.label) && !string.IsNullOrEmpty(td.description)
 			orderby td.BaseMarketValue
 			select td).ToList();
 		list.AddRange(CreateSingleGeneGenepackItems());
+		producibleDefsCache = list;
 		return list;
 	}
 
@@ -222,9 +203,10 @@ public class VoidMinerSettings : ModSettings
 		{
 			ThingDef thingDef = new ThingDef();
 			thingDef.defName = "genepack_" + item2.defName;
-			thingDef.label = "SingleGeneGenepackLabel".Translate(item2.label);
-			thingDef.description = "SingleGeneGenepackDescription".Translate(item2.label, item2.description);
+			thingDef.label = "SC_SingleGeneGenepackLabel".Translate(item2.label);
+			thingDef.description = "SC_SingleGeneGenepackDescription".Translate(item2.label, item2.description);
 			thingDef.category = ThingCategory.Item;
+			thingDef.modContentPack = LoadedModManager.GetMod<VoidMinerMod>().Content;
 			thingDef.BaseMarketValue = Math.Max((float)item2.biostatCpx * 100f, 100f);
 			thingDef.stackLimit = 1;
 			thingDef.techLevel = TechLevel.Archotech;
@@ -412,7 +394,7 @@ public class VoidMinerSettings : ModSettings
 			}
 		}
 		float num4 = num * 2500f;
-		return num4 * globalTimeMultiplier;
+		return Math.Max(1f, num4 * globalTimeMultiplier);
 	}
 
 	public int GetOutputAmountForProduct(ThingDef product)
@@ -442,55 +424,22 @@ public class VoidMinerSettings : ModSettings
 		unfinishedWorkHitPoints = 50;
 		allowedProducts.Clear();
 		allowedProducts.AddRange(DefaultAllowedProducts);
+		UpdateAllSingleGeneGenepacks();
 		NotifySettingsChanged();
 	}
 
 	public void ValidateOutputLimits()
 	{
-		if (outputMin < 1f)
-		{
-			outputMin = 1f;
-		}
-	}
-
-	private void TestValueTierSystem()
-	{
-		try
-		{
-			float[] array = new float[12]
-			{
-				1f, 10f, 25f, 75f, 200f, 750f, 2000f, 7500f, 25000f, 75000f,
-				200000f, 750000f
-			};
-			float[] array2 = array;
-			foreach (float baseMarketValue in array2)
-			{
-				ThingDef product = new ThingDef
-				{
-					BaseMarketValue = baseMarketValue
-				};
-				float workAmountForProduct = GetWorkAmountForProduct(product);
-				float num = workAmountForProduct / 2500f;
-			}
-		}
-		catch (Exception arg)
-		{
-			Log.Error($"[VoidExtractor] 测试分段函数系统时发生错误: {arg}");
-		}
+		if (float.IsNaN(globalTimeMultiplier) || float.IsInfinity(globalTimeMultiplier) || globalTimeMultiplier <= 0f) globalTimeMultiplier = 1f;
+		if (float.IsNaN(globalOutputMultiplier) || float.IsInfinity(globalOutputMultiplier) || globalOutputMultiplier <= 0f) globalOutputMultiplier = 1f;
+		if (float.IsNaN(outputMin) || float.IsInfinity(outputMin) || outputMin < 1f) outputMin = 1f;
 	}
 
 	public void NotifySettingsChanged()
 	{
 		ValidateOutputLimits();
-		this.OnSettingsChanged?.Invoke();
-		try
-		{
-			DynamicRecipeManager.UpdateAllRecipes();
-		}
-		catch (Exception arg)
-		{
-			Log.Error($"[VoidExtractor] 更新配方时发生错误: {arg}");
-		}
+		InvalidateProductCaches();
+		OnSettingsChanged?.Invoke();
 	}
 
 	public override void ExposeData()
@@ -505,13 +454,15 @@ public class VoidMinerSettings : ModSettings
 		Scribe_Values.Look(ref enableAutoProduction, "enableAutoProduction", defaultValue: false);
 		Scribe_Values.Look(ref autoProductionCooldown, "autoProductionCooldown", 60000);
 		Scribe_Collections.Look(ref allowedProducts, "allowedProducts", LookMode.Value);
+		if (Scribe.mode == LoadSaveMode.LoadingVars) needsGeneDefaults = false;
 		if (Scribe.mode == LoadSaveMode.PostLoadInit)
 		{
 			if (allowedProducts == null)
 			{
-				allowedProducts = new List<string>();
+				InitializeDefaultSettings();
 			}
-			InitializeDefaultSettings();
+			ValidateOutputLimits();
+			InvalidateProductCaches();
 		}
 	}
 }

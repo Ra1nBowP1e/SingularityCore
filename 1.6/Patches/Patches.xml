@@ -3,11 +3,10 @@
     <Operation Class="PatchOperationFindMod">
         <success>Always</success>
         <mods>
-            <li>Royalty</li>
             <li>Biotech</li>
         </mods>
         <nomatch Class="PatchOperationRemove">
-            <xpath>*/ThingDef[defName = "Apparel_HazardCarapaceH"]/immuneToToxGasExposure</xpath>
+            <xpath>*/ThingDef[defName = "Apparel_HazardCarapaceH"]/apparel/immuneToToxGasExposure</xpath>
         </nomatch>
     </Operation>
 </Patch>

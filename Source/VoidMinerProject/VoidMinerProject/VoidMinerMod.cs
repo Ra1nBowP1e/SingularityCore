@@ -63,7 +63,8 @@ public class VoidMinerMod : Mod
 	public VoidMinerMod(ModContentPack content)
 		: base(content)
 	{
-		GetSettings<VoidMinerSettings>();
+		VoidMinerSettings settings = GetSettings<VoidMinerSettings>();
+		LongEventHandler.ExecuteWhenFinished(settings.InitializeAfterDefsLoaded);
 	}
 
 	public override void DoSettingsWindowContents(Rect inRect)
@@ -83,7 +84,6 @@ public class VoidMinerMod : Mod
 		DrawSliderSettings(rect2, settings);
 		Rect rect3 = new Rect(0f, 200f, rect2.width, (rect2.height - 290f) * 1.7f);
 		DrawItemSelection(rect3, settings);
-		settings.Write();
 	}
 
 	public override void WriteSettings()
@@ -93,7 +93,6 @@ public class VoidMinerMod : Mod
 		{
 			settingsWindowOpen = false;
 			ClearItemCache();
-			VoidMinerSettings.ClearSingleGeneCache();
 			displayItems.Clear();
 			filterCacheValid = false;
 		}
@@ -110,7 +109,7 @@ public class VoidMinerMod : Mod
 		float num6 = (rect.width - num5) / 2f;
 		Rect rect2 = new Rect(rect.x + num6, y, num, 30f);
 		Text.Font = GameFont.Small;
-		Widgets.Label(rect2, "GlobalOutputMultiplierLabel".Translate());
+		Widgets.Label(rect2, "SC_GlobalOutputMultiplierLabel".Translate());
 		Rect rect3 = new Rect(rect.x + num6 + num + 20f, y, num2, 30f);
 		float globalOutputMultiplier = settings.globalOutputMultiplier;
 		float globalOutputMultiplier2 = settings.globalOutputMultiplier;
@@ -133,7 +132,7 @@ public class VoidMinerMod : Mod
 		}
 		y += num4;
 		rect2 = new Rect(rect.x + num6, y, num, 30f);
-		Widgets.Label(rect2, "GlobalTimeMultiplierLabel".Translate());
+		Widgets.Label(rect2, "SC_GlobalTimeMultiplierLabel".Translate());
 		rect3 = new Rect(rect.x + num6 + num + 20f, y, num2, 30f);
 		float globalTimeMultiplier = settings.globalTimeMultiplier;
 		float globalTimeMultiplier2 = settings.globalTimeMultiplier;
@@ -156,7 +155,7 @@ public class VoidMinerMod : Mod
 		}
 		y += num4;
 		rect2 = new Rect(rect.x + num6, y, num, 30f);
-		Widgets.Label(rect2, "OutputMinLabel".Translate());
+		Widgets.Label(rect2, "SC_OutputMinLabel".Translate());
 		rect3 = new Rect(rect.x + num6 + num + 20f, y, num2, 30f);
 		float outputMin = settings.outputMin;
 		float outputMin2 = settings.outputMin;
@@ -179,7 +178,7 @@ public class VoidMinerMod : Mod
 		}
 		y += num4;
 		Rect rect5 = new Rect((rect.width - 200f) / 2f, y, 200f, 28f);
-		if (Widgets.ButtonText(rect5, "ResetToDefaultsButton".Translate()))
+		if (Widgets.ButtonText(rect5, "SC_ResetToDefaultsButton".Translate()))
 		{
 			settings.ResetToDefaults();
 			ClearItemCache();
@@ -191,7 +190,7 @@ public class VoidMinerMod : Mod
 		}
 		if (selectedModFilter == "AllMods")
 		{
-			selectedModFilter = "AllModsLabel".Translate();
+			selectedModFilter = "SC_AllModsLabel".Translate();
 		}
 		if (!Widgets.ButtonText(rect6, selectedModFilter))
 		{
@@ -216,7 +215,7 @@ public class VoidMinerMod : Mod
 	{
 		Rect rect2 = new Rect(rect.x, rect.y, rect.width, 35f);
 		Text.Font = GameFont.Medium;
-		Widgets.Label(rect2, "ProducibleItemsTitle".Translate());
+		Widgets.Label(rect2, "SC_ProducibleItemsTitle".Translate());
 		Text.Font = GameFont.Small;
 		Rect rect3 = new Rect(rect.x, rect.y + 40f, rect.width, 35f);
 		searchText = Widgets.TextField(rect3, searchText);
@@ -290,7 +289,7 @@ public class VoidMinerMod : Mod
 				orderby CalculateRelevanceScore(item, searchLower) descending
 				select item;
 		}
-		string text = "AllModsLabel".Translate();
+		string text = "SC_AllModsLabel".Translate();
 		if (selectedModFilter != text)
 		{
 			enumerable = enumerable.Where((ThingDef item) => item.modContentPack != null && item.modContentPack.Name == selectedModFilter);
@@ -337,7 +336,7 @@ public class VoidMinerMod : Mod
 	private List<string> GetAvailableMods()
 	{
 		HashSet<string> hashSet = new HashSet<string>();
-		string item = "AllModsLabel".Translate();
+		string item = "SC_AllModsLabel".Translate();
 		hashSet.Add(item);
 		foreach (ThingDef cachedProducibleItem in cachedProducibleItems)
 		{
@@ -362,7 +361,7 @@ public class VoidMinerMod : Mod
 
 	public override string SettingsCategory()
 	{
-		return "VoidMinerSettingsCategory".Translate();
+		return "SC_VoidMinerSettingsCategory".Translate();
 	}
 
 	private void BuildItemCache()
@@ -603,7 +602,7 @@ public class VoidMinerMod : Mod
 	{
 		if (itemsToDraw.Count == 0)
 		{
-			Widgets.Label(rect, "NoProductionTarget".Translate());
+			Widgets.Label(rect, "SC_NoProductionTarget".Translate());
 			return;
 		}
 		(int start, int end) tuple = CalculateSimpleViewport(itemsToDraw.Count);
@@ -675,17 +674,17 @@ public class VoidMinerMod : Mod
 			Rect rect3 = new Rect(95f, num + 15f, viewRect.width - 450f, 20f);
 			Widgets.Label(rect3, thingDef.label);
 			Rect rect4 = new Rect(viewRect.width - 380f, num + 15f, 90f, 20f);
-			Widgets.Label(rect4, "ValueLabel".Translate() + " " + thingDef.BaseMarketValue.ToString("F0"));
+			Widgets.Label(rect4, "SC_ValueLabel".Translate() + " " + thingDef.BaseMarketValue.ToString("F0"));
 			Rect rect5 = new Rect(viewRect.width - 270f, num + 15f, 100f, 20f);
-			Widgets.Label(rect5, string.Concat("OutputLabel".Translate() + " ", value.outputAmount.ToString()));
+			Widgets.Label(rect5, string.Concat("SC_OutputLabel".Translate() + " ", value.outputAmount.ToString()));
 			Rect rect6 = new Rect(viewRect.width - 150f, num + 15f, 120f, 20f);
-			Widgets.Label(rect6, "WorkAmountLabel".Translate() + " " + (value.workAmount / 60f).ToString("F0"));
+			Widgets.Label(rect6, "SC_WorkAmountLabel".Translate() + " " + (value.workAmount / 60f).ToString("F0"));
 			if (value.isFromOtherMod)
 			{
 				Rect rect7 = new Rect(95f, num + 35f, viewRect.width - 95f, 15f);
 				Text.Font = GameFont.Tiny;
 				GUI.color = Color.yellow;
-				Widgets.Label(rect7, "FromModLabel".Translate(value.modName));
+				Widgets.Label(rect7, "SC_FromModLabel".Translate(value.modName));
 				GUI.color = Color.white;
 				Text.Font = GameFont.Small;
 			}

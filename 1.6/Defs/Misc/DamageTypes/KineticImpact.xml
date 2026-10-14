@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Uses the vanilla damage worker; no Rimsenal assembly is required. -->
+    <DamageDef ParentName="Bomb">
+        <defName>SC_KineticImpact</defName>
+        <label>kinetic impact</label>
+        <deathMessage>{0} was crushed by a kinetic impact.</deathMessage>
+        <armorCategory>Blunt</armorCategory>
+        <hediff>Crush</hediff>
+        <hediffSolid>Crack</hediffSolid>
+        <impactSoundType>Blunt</impactSoundType>
+        <defaultStoppingPower>2</defaultStoppingPower>
+    </DamageDef>
+</Defs>

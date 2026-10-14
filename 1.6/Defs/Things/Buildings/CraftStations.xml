@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <thingDef ParentName="BenchBase">
+    <ThingDef ParentName="BenchBase">
         <defName>SC_table</defName>
         <label>kinetic field manipulator</label>
         <thingClass>Building_WorkTable</thingClass>
@@ -67,7 +67,7 @@
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>
         </placeWorkers>
-    </thingDef>
+    </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
         <defName>SC_AutoVoidMiner</defName>

@@ -23,8 +23,6 @@ public class CompAutoVoidMiner : ThingComp
 		Continuous
 	}
 
-	private const int TICKS_PER_DAY = 60000;
-
 	private int productionTicks = 0;
 
 	private ThingDef currentProductionTarget;
@@ -45,9 +43,11 @@ public class CompAutoVoidMiner : ThingComp
 
 	private int completedCount = 0;
 
-	private int checkCounter = 0;
-
-	private const int CHECK_INTERVAL = 30;
+	private CompPowerTrader powerComp;
+	private bool manuallyPaused;
+	private bool pausedForQuantity;
+	private int pendingOutputCount;
+	private Thing pendingProduct;
 
 	public CompProperties_AutoVoidMiner PropsAutoVoidMiner => (CompProperties_AutoVoidMiner)props;
 
@@ -86,16 +86,17 @@ public class CompAutoVoidMiner : ThingComp
 		{
 			if (num3 > 0)
 			{
-				return "TimeFormatDaysHours".Translate(num2, num3);
+				return "SC_TimeFormatDaysHours".Translate(num2, num3);
 			}
-			return "TimeFormatDays".Translate(num2);
+			return "SC_TimeFormatDays".Translate(num2);
 		}
-		return "TimeFormatHours".Translate(num3);
+		return "SC_TimeFormatHours".Translate(num3);
 	}
 
 	public override void PostSpawnSetup(bool respawningAfterLoad)
 	{
 		base.PostSpawnSetup(respawningAfterLoad);
+		powerComp = parent.GetComp<CompPowerTrader>();
 		if (!respawningAfterLoad)
 		{
 			if (currentProductionTarget == null && currentState == ProductionState.Stopped)
@@ -113,7 +114,7 @@ public class CompAutoVoidMiner : ThingComp
 	public override void CompTick()
 	{
 		base.CompTick();
-		CompPowerTrader comp = parent.GetComp<CompPowerTrader>();
+		CompPowerTrader comp = powerComp;
 		if (comp == null || !comp.PowerOn)
 		{
 			if (currentState == ProductionState.Producing)
@@ -124,24 +125,24 @@ public class CompAutoVoidMiner : ThingComp
 			}
 			return;
 		}
-		if (currentState == ProductionState.Paused && currentProductionTarget != null && pausedByPowerOutage)
+		if (currentState == ProductionState.Paused && currentProductionTarget != null && pausedByPowerOutage && !manuallyPaused)
 		{
 			ResumeProduction();
 			pausedByPowerOutage = false;
 		}
-		checkCounter++;
-		if (checkCounter >= 30)
+		// Stagger inventory scans between buildings; idle/single mode never scans the map.
+		if (productionMode == ProductionMode.Maintain && !manuallyPaused && parent.IsHashIntervalTick(250))
 		{
-			checkCounter = 0;
 			CheckMaintainQuantityMode();
 		}
 		switch (currentState)
 		{
 		case ProductionState.Producing:
-			productionTicks++;
+			if (productionTicks < currentWorkAmount) productionTicks++;
 			if ((float)productionTicks >= currentWorkAmount)
 			{
-				CompleteProduction();
+				// Retry blocked output periodically, retaining completed work and the product.
+				if (pendingOutputCount == 0 || parent.IsHashIntervalTick(250)) CompleteProduction();
 			}
 			break;
 		case ProductionState.Paused:
@@ -171,14 +172,12 @@ public class CompAutoVoidMiner : ThingComp
 			productionTicks = 0;
 		}
 		currentState = ProductionState.Producing;
+		pausedForQuantity = false;
 	}
 
 	private void CompleteProduction()
 	{
-		if (currentProductionTarget != null)
-		{
-			ProduceItems(currentProductionTarget);
-		}
+		if (currentProductionTarget == null || !ProduceItems(currentProductionTarget)) return;
 		completedCount++;
 		if (ShouldContinueProduction())
 		{
@@ -213,10 +212,6 @@ public class CompAutoVoidMiner : ThingComp
 		if (compQuality != null)
 		{
 			compQuality.SetQuality(qualityCategory, ArtGenerationContext.Outsider);
-			if ((int)qualityCategory >= 4)
-			{
-				Log.Message("[VoidExtractor] 生产出高品质物品: " + product.Label + " - " + qualityCategory.GetLabel());
-			}
 		}
 	}
 
@@ -249,57 +244,28 @@ public class CompAutoVoidMiner : ThingComp
 		return genepack;
 	}
 
-	private ThingDef CreateDynamicSingleGeneThingDef(GeneDef geneDef)
-	{
-		if (geneDef == null)
-		{
-			return null;
-		}
-		ThingDef thingDef = new ThingDef();
-		thingDef.defName = "genepack_" + geneDef.defName;
-		thingDef.label = "Genepack(" + geneDef.label + ")";
-		thingDef.description = "包含单个基因'" + geneDef.label + "'的基因组。" + geneDef.description;
-		thingDef.category = ThingCategory.Item;
-		thingDef.thingClass = typeof(Thing);
-		thingDef.useHitPoints = true;
-		thingDef.tradeability = Tradeability.All;
-		thingDef.stackLimit = 1;
-		thingDef.techLevel = TechLevel.Ultra;
-		thingDef.graphicData = new GraphicData
-		{
-			texPath = "Things/Item/Special/Genepack",
-			graphicClass = typeof(Graphic_Single),
-			drawSize = new Vector2(0.75f, 0.75f)
-		};
-		thingDef.uiIconPath = "Things/Item/Special/Genepack";
-		return thingDef;
-	}
 
-	private void ProduceItems(ThingDef productDef)
+	private bool ProduceItems(ThingDef productDef)
 	{
-		int num = CalculateOutputAmount(productDef);
-		if (num <= 0)
+		if (parent.Map == null) return false;
+		if (pendingOutputCount == 0) pendingOutputCount = CalculateOutputAmount(productDef);
+		IntVec3 cell = parent.Position + new IntVec3(0, 0, -2);
+		if (!cell.InBounds(parent.Map)) cell = parent.Position;
+		while (pendingOutputCount > 0)
 		{
-			return;
-		}
-		Thing thing = MakeProduct(productDef);
-		if (productDef.stackLimit > 1)
-		{
-			thing.stackCount = Math.Min(num, productDef.stackLimit);
-		}
-		IntVec3 position = parent.Position;
-		IntVec3 intVec = position + new IntVec3(0, 0, -2);
-		if (intVec.InBounds(parent.Map))
-		{
-			if (GenPlace.TryPlaceThing(thing, intVec, parent.Map, ThingPlaceMode.Near) && thing.MarketValue > 1000f)
+			if (pendingProduct == null)
 			{
-				Messages.Message("VoidMinerProductionComplete".Translate(productDef.label, thing.stackCount), MessageTypeDefOf.PositiveEvent);
+				pendingProduct = MakeProduct(productDef);
+				pendingProduct.stackCount = Math.Min(pendingOutputCount, Math.Max(1, pendingProduct.def.stackLimit));
 			}
+			int before = pendingProduct.stackCount;
+			bool placed = GenPlace.TryPlaceThing(pendingProduct, cell, parent.Map, ThingPlaceMode.Near);
+			int remaining = placed || pendingProduct.Destroyed || pendingProduct.Spawned ? 0 : pendingProduct.stackCount;
+			pendingOutputCount -= before - remaining;
+			if (remaining > 0) return false;
+			pendingProduct = null;
 		}
-		else if (GenPlace.TryPlaceThing(thing, parent.Position, parent.Map, ThingPlaceMode.Near) && thing.MarketValue > 1000f)
-		{
-			Messages.Message("VoidMinerProductionComplete".Translate(productDef.label, thing.stackCount), MessageTypeDefOf.PositiveEvent);
-		}
+		return true;
 	}
 
 	private float CalculateWorkAmount(ThingDef productDef)
@@ -347,18 +313,6 @@ public class CompAutoVoidMiner : ThingComp
 		}
 	}
 
-	private void ForceSelectRandomProductionTarget()
-	{
-		VoidMinerSettings instance = VoidMinerSettings.Instance;
-		if (instance != null)
-		{
-			List<ThingDef> allowedProductDefs = instance.GetAllowedProductDefs();
-			if (allowedProductDefs.Count > 0)
-			{
-				currentProductionTarget = allowedProductDefs[Rand.Range(0, allowedProductDefs.Count)];
-			}
-		}
-	}
 
 	public ProductionState GetCurrentState()
 	{
@@ -408,7 +362,7 @@ public class CompAutoVoidMiner : ThingComp
 
 	public void IncreaseProductionCount()
 	{
-		productionCount++;
+		if (productionCount < int.MaxValue) productionCount++;
 	}
 
 	public void DecreaseProductionCount()
@@ -418,10 +372,10 @@ public class CompAutoVoidMiner : ThingComp
 
 	private void CheckMaintainQuantityMode()
 	{
-		if (productionMode == ProductionMode.Maintain && currentProductionTarget != null)
+		if (productionMode == ProductionMode.Maintain && currentProductionTarget != null && !manuallyPaused)
 		{
 			int currentStorageCount = GetCurrentStorageCount();
-			if (currentStorageCount < productionCount && (currentState == ProductionState.Stopped || currentState == ProductionState.Paused))
+			if (currentStorageCount < productionCount && (currentState == ProductionState.Stopped || pausedForQuantity))
 			{
 				StartProduction();
 			}
@@ -429,6 +383,7 @@ public class CompAutoVoidMiner : ThingComp
 			{
 				pausedProgress = GetProductionProgress();
 				currentState = ProductionState.Paused;
+				pausedForQuantity = true;
 			}
 		}
 	}
@@ -444,10 +399,12 @@ public class CompAutoVoidMiner : ThingComp
 		{
 			return 0;
 		}
-		List<Thing> list = map.listerThings.ThingsOfDef(currentProductionTarget);
+		bool singleGene = currentProductionTarget.defName.StartsWith("genepack_");
+		List<Thing> list = map.listerThings.ThingsOfDef(singleGene ? ThingDefOf.Genepack : currentProductionTarget);
 		int num = 0;
 		foreach (Thing item in list)
 		{
+			if (singleGene && (!(item is Genepack pack) || pack.GeneSet.GenesListForReading.Count != 1 || "genepack_" + pack.GeneSet.GenesListForReading[0].defName != currentProductionTarget.defName)) continue;
 			num += item.stackCount;
 		}
 		return num;
@@ -457,34 +414,46 @@ public class CompAutoVoidMiner : ThingComp
 	{
 		return productionMode switch
 		{
-			ProductionMode.Single => completedCount < productionCount, 
-			ProductionMode.Maintain => false, 
-			ProductionMode.Continuous => true, 
-			_ => false, 
+			ProductionMode.Single => completedCount < productionCount,
+			ProductionMode.Maintain => false,
+			ProductionMode.Continuous => true,
+			_ => false,
 		};
 	}
 
-	public void SetProductionTarget(ThingDef target)
+	public bool SetProductionTarget(ThingDef target)
 	{
-		if (target != null && VoidMinerSettings.Instance.IsProductAllowed(target))
+		if (pendingOutputCount > 0)
 		{
+			Messages.Message("SC_VoidMinerOutputBlocked".Translate(), MessageTypeDefOf.RejectInput, false);
+			return false;
+		}
+		if (target != null && (VoidMinerSettings.Instance?.IsProductAllowed(target) ?? false))
+		{
+			completedCount = 0;
+			manuallyPaused = false;
+			pausedForQuantity = false;
+			pausedByPowerOutage = false;
 			currentProductionTarget = target;
 			productionTicks = 0;
 			pausedProgress = 0f;
-			CompPowerTrader comp = parent.GetComp<CompPowerTrader>();
-			if (comp != null && comp.PowerOn)
+			currentState = ProductionState.Stopped;
+			StartProduction();
+			if (powerComp == null || !powerComp.PowerOn)
 			{
-				StartProduction();
+				currentState = ProductionState.Paused;
+				pausedByPowerOutage = true;
 			}
-			else
-			{
-				currentState = ProductionState.Stopped;
-			}
+			return true;
 		}
+		return false;
 	}
 
 	public void PauseProduction()
 	{
+		manuallyPaused = true;
+		pausedForQuantity = false;
+		pausedByPowerOutage = false;
 		if (currentState == ProductionState.Producing)
 		{
 			pausedProgress = GetProductionProgress();
@@ -495,6 +464,8 @@ public class CompAutoVoidMiner : ThingComp
 
 	public void ResumeProduction()
 	{
+		manuallyPaused = false;
+		pausedForQuantity = false;
 		if (currentState == ProductionState.Paused)
 		{
 			currentState = ProductionState.Producing;
@@ -504,14 +475,19 @@ public class CompAutoVoidMiner : ThingComp
 
 	public void StopProduction()
 	{
-		if (currentState == ProductionState.Producing || currentState == ProductionState.Paused)
+		if (pendingOutputCount > 0)
 		{
-			currentState = ProductionState.Stopped;
-			productionTicks = 0;
-			pausedProgress = 0f;
-			currentProductionTarget = null;
-			pausedByPowerOutage = false;
+			PauseProduction();
+			Messages.Message("SC_VoidMinerOutputBlocked".Translate(), MessageTypeDefOf.RejectInput, false);
+			return;
 		}
+		currentState = ProductionState.Stopped;
+		productionTicks = 0;
+		pausedProgress = 0f;
+		currentProductionTarget = null;
+		pausedByPowerOutage = false;
+		manuallyPaused = false;
+		pausedForQuantity = false;
 	}
 
 	public ThingDef GetCurrentProductionTarget()
@@ -535,95 +511,32 @@ public class CompAutoVoidMiner : ThingComp
 		Scribe_Values.Look(ref productionMode, "productionMode", ProductionMode.Single);
 		Scribe_Values.Look(ref productionCount, "productionCount", 1);
 		Scribe_Values.Look(ref completedCount, "completedCount", 0);
-		if (Scribe.mode != LoadSaveMode.PostLoadInit)
+		Scribe_Values.Look(ref manuallyPaused, "manuallyPaused", false);
+		Scribe_Values.Look(ref pausedForQuantity, "pausedForQuantity", false);
+		Scribe_Values.Look(ref pendingOutputCount, "pendingOutputCount", 0);
+		Scribe_Deep.Look(ref pendingProduct, "pendingProduct");
+		if (Scribe.mode != LoadSaveMode.PostLoadInit) return;
+		productionCount = Math.Max(1, productionCount);
+		productionTicks = Math.Max(0, productionTicks);
+		currentProductionTarget = VoidMinerSettings.Instance?.ResolveProduct(productionTargetDefNameForSave);
+		if (currentProductionTarget == null)
 		{
-			return;
+			if (!string.IsNullOrEmpty(productionTargetDefNameForSave))
+				Log.Warning("[SingularityCore] Void Miner target no longer exists: " + productionTargetDefNameForSave);
+			currentState = ProductionState.Stopped;
+			productionTicks = 0;
+			currentWorkAmount = 0f;
+			pausedProgress = 0f;
+			pausedByPowerOutage = false;
+			manuallyPaused = false;
+			pausedForQuantity = false;
 		}
-		if (!string.IsNullOrEmpty(productionTargetDefNameForSave))
+		else if (currentWorkAmount <= 0f)
 		{
-			currentProductionTarget = DefDatabase<ThingDef>.GetNamed(productionTargetDefNameForSave, errorOnFail: false);
-			if (ModsConfig.BiotechActive && currentProductionTarget == null && productionTargetDefNameForSave.StartsWith("genepack_"))
-			{
-				VoidMinerSettings instance = VoidMinerSettings.Instance;
-				if (instance != null)
-				{
-					List<ThingDef> allowedProductDefs = instance.GetAllowedProductDefs();
-					currentProductionTarget = allowedProductDefs.FirstOrDefault((ThingDef def) => def.defName == productionTargetDefNameForSave);
-				}
-				if (currentProductionTarget == null)
-				{
-					try
-					{
-						string defName = productionTargetDefNameForSave.Substring("genepack_".Length);
-						GeneDef named = DefDatabase<GeneDef>.GetNamed(defName, errorOnFail: false);
-						if (named != null)
-						{
-							currentProductionTarget = CreateDynamicSingleGeneThingDef(named);
-						}
-					}
-					catch (Exception ex)
-					{
-						Log.Warning("[VoidMiner] Failed to create dynamic genepack for " + productionTargetDefNameForSave + ": " + ex.Message);
-					}
-				}
-			}
-			if (currentProductionTarget != null)
-			{
-				float num = CalculateWorkAmount(currentProductionTarget);
-				currentWorkAmount = num;
-			}
+			currentWorkAmount = CalculateWorkAmount(currentProductionTarget);
 		}
-		else
-		{
-			if (productionTicks <= 0 && currentState != ProductionState.Producing && currentState != ProductionState.Paused)
-			{
-				return;
-			}
-			Log.Warning("[VoidMiner] Detected corrupted save data: production progress exists but no target found. Attempting recovery...");
-			bool flag = false;
-			if (ModsConfig.BiotechActive)
-			{
-				VoidMinerSettings instance2 = VoidMinerSettings.Instance;
-				if (instance2 != null)
-				{
-					List<ThingDef> allowedProductDefs2 = instance2.GetAllowedProductDefs();
-					List<ThingDef> list = allowedProductDefs2.Where((ThingDef def) => def.defName.StartsWith("genepack_")).ToList();
-					Log.Message($"[VoidMiner] Found {list.Count} genepacks available for recovery");
-					if (list.Count > 0)
-					{
-						List<ThingDef> source = list.OrderBy((ThingDef def) => def.defName).ToList();
-						currentProductionTarget = source.FirstOrDefault();
-						currentWorkAmount = CalculateWorkAmount(currentProductionTarget);
-						flag = true;
-						Log.Message("[VoidMiner] Smart recovery: selected genepack " + currentProductionTarget.defName + " (attempting to restore progress)");
-					}
-					else
-					{
-						Log.Warning("[VoidMiner] No genepacks found in settings for recovery");
-					}
-				}
-				else
-				{
-					Log.Warning("[VoidMiner] Settings instance is null, cannot recover genepacks");
-				}
-			}
-			if (!flag)
-			{
-				Log.Message("[VoidMiner] Genepack recovery failed, trying force random recovery...");
-				ForceSelectRandomProductionTarget();
-				if (currentProductionTarget != null)
-				{
-					currentWorkAmount = CalculateWorkAmount(currentProductionTarget);
-					Log.Message($"[VoidMiner] Force random recovery successful: assigned {currentProductionTarget.defName} with {productionTicks}/{currentWorkAmount} progress");
-					return;
-				}
-				Log.Warning("[VoidMiner] Force random recovery also failed: no valid targets available");
-				Log.Warning("[VoidMiner] Recovery failed: no valid target available. Resetting production state.");
-				currentState = ProductionState.Stopped;
-				productionTicks = 0;
-				currentWorkAmount = 0f;
-				pausedProgress = 0f;
-			}
-		}
+		// Older saves did not distinguish manual pauses from inventory pauses.
+		if (currentState == ProductionState.Paused && !pausedByPowerOutage && !pausedForQuantity)
+			manuallyPaused = true;
 	}
 }

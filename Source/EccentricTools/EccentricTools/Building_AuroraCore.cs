@@ -83,12 +83,12 @@ public class Building_AuroraCore : Building
 		{
 			yield return gizmo;
 		}
-		if (base.Spawned && this.GetConnectedGravship() != null)
+		if (IsActive && this.GetConnectedGravship() != null)
 		{
 			yield return new Command_Action
 			{
-				defaultLabel = "EccentricCore_AutomatedLaunch".Translate(),
-				defaultDesc = "EccentricCore_AutomatedLaunchDesc".Translate(),
+				defaultLabel = "SC_EccentricCore_AutomatedLaunch".Translate(),
+				defaultDesc = "SC_EccentricCore_AutomatedLaunchDesc".Translate(),
 				icon = CoreUtility.LaunchButton,
 				action = StartAutomatedLaunch
 			};
@@ -97,7 +97,7 @@ public class Building_AuroraCore : Building
 
 	private void StartAutomatedLaunch()
 	{
-		if (!base.Spawned)
+		if (!IsActive)
 		{
 			return;
 		}
@@ -109,13 +109,13 @@ public class Building_AuroraCore : Building
 		CompPilotConsole compPilotConsole = connectedGravship.FindPilotConsole();
 		if (compPilotConsole == null)
 		{
-			Messages.Message("EccentricCore_AutomatedLaunchNoConsole".Translate(), MessageTypeDefOf.RejectInput, historical: false);
+			Messages.Message("SC_EccentricCore_AutomatedLaunchNoConsole".Translate(), MessageTypeDefOf.RejectInput, historical: false);
 			return;
 		}
 		AcceptanceReport acceptanceReport = compPilotConsole.CanUseNow();
 		if (!acceptanceReport.Accepted)
 		{
-			Messages.Message("EccentricCore_AutomatedLaunchRejected".Translate(acceptanceReport.Reason), MessageTypeDefOf.RejectInput, historical: false);
+			Messages.Message("SC_EccentricCore_AutomatedLaunchRejected".Translate(acceptanceReport.Reason), MessageTypeDefOf.RejectInput, historical: false);
 		}
 		else
 		{
@@ -125,11 +125,12 @@ public class Building_AuroraCore : Building
 
 	private void DoAutomatedLaunch()
 	{
+		if (!IsActive) return;
 		Building_GravEngine connectedGravship = this.GetConnectedGravship();
 		if (connectedGravship != null)
 		{
 			CompPilotConsole compPilotConsole = connectedGravship.FindPilotConsole();
-			if (compPilotConsole != null)
+			if (compPilotConsole != null && compPilotConsole.CanUseNow().Accepted)
 			{
 				connectedGravship.launchInfo = new LaunchInfo
 				{

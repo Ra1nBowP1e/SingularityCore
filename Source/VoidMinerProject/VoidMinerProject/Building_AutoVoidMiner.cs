@@ -17,13 +17,17 @@ public class Building_AutoVoidMiner : Building
 
 	private CompAutoVoidMiner compAutoMiner;
 
+	private static readonly Mesh OrbMesh = MeshPool.GridPlane(new Vector2(0.75f, 0.75f));
+	private static readonly Graphic WorkingGraphic = GraphicDatabase.Get<Graphic_Single>("AutoVoidMiner_Work", ShaderDatabase.Cutout, Vector2.one * 3f, Color.white);
+	private MaterialPropertyBlock orbProperties;
+
 	public override Graphic Graphic
 	{
 		get
 		{
 			if (compAutoMiner != null && compAutoMiner.GetCurrentState() == CompAutoVoidMiner.ProductionState.Producing)
 			{
-				return GraphicDatabase.Get<Graphic_Single>("AutoVoidMiner_Work", ShaderDatabase.Cutout, Vector2.one * 3f, Color.white);
+				return WorkingGraphic;
 			}
 			return base.Graphic;
 		}
@@ -38,11 +42,11 @@ public class Building_AutoVoidMiner : Building
 		{
 			if (num3 > 0)
 			{
-				return "TimeFormatDaysHours".Translate(num2, num3);
+				return "SC_TimeFormatDaysHours".Translate(num2, num3);
 			}
-			return "TimeFormatDays".Translate(num2);
+			return "SC_TimeFormatDays".Translate(num2);
 		}
-		return "TimeFormatHours".Translate(num3);
+		return "SC_TimeFormatHours".Translate(num3);
 	}
 
 	public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -70,9 +74,9 @@ public class Building_AutoVoidMiner : Building
 		return compAutoMiner?.GetRemainingProductionTicks() ?? 0;
 	}
 
-	public void SetProductionTarget(ThingDef target)
+	public bool SetProductionTarget(ThingDef target)
 	{
-		compAutoMiner?.SetProductionTarget(target);
+		return compAutoMiner?.SetProductionTarget(target) ?? false;
 	}
 
 	public void PauseProduction()
@@ -103,8 +107,8 @@ public class Building_AutoVoidMiner : Building
 		}
 		yield return new Command_Action
 		{
-			defaultLabel = "SelectProductionTarget".Translate(),
-			defaultDesc = "SelectProductionTargetDesc".Translate(),
+			defaultLabel = "SC_SelectProductionTarget".Translate(),
+			defaultDesc = "SC_SelectProductionTargetDesc".Translate(),
 			icon = GetGizmoIcon(),
 			action = delegate
 			{
@@ -126,15 +130,16 @@ public class Building_AutoVoidMiner : Building
 	{
 		if (OrbMat?.Material == null)
 		{
-			Log.Warning("[VoidExtractor] OrbMat.Material is null");
+			Log.WarningOnce("[SingularityCore] Void Miner orb material is missing.", 17361201);
 			return;
 		}
 		drawLoc.z += 0.5f * (1f + Mathf.Sin(Mathf.PI * 2f * (float)GenTicks.TicksGame / 500f)) * 0.3f;
 		drawLoc.y += 0.03658537f;
 		Vector3 orbSize = GetOrbSize();
 		Color orbColor = GetOrbColor();
-		CachedMaterial cachedMaterial = new CachedMaterial("AutoVoidMiner_attach", ShaderDatabase.Cutout, orbColor);
-		Graphics.DrawMesh(MeshPool.GridPlane(new Vector2(0.75f, 0.75f)), Matrix4x4.TRS(drawLoc, Quaternion.identity, orbSize), cachedMaterial.Material, 0, null, 0);
+		orbProperties ??= new MaterialPropertyBlock();
+		orbProperties.SetColor("_Color", orbColor);
+		Graphics.DrawMesh(OrbMesh, Matrix4x4.TRS(drawLoc, Quaternion.identity, orbSize), OrbMat.Material, 0, null, 0, orbProperties);
 	}
 
 	private Vector3 GetOrbSize()
@@ -199,7 +204,7 @@ public class Building_AutoVoidMiner : Building
 		CompAutoVoidMiner.ProductionState currentState = GetCurrentState();
 		if (currentProductionTarget == null || currentState == CompAutoVoidMiner.ProductionState.Stopped)
 		{
-			return inspectString + "\n" + "ClickToSelectProductionTarget".Translate();
+			return inspectString + "\n" + "SC_ClickToSelectProductionTarget".Translate();
 		}
 		string text = "";
 		switch (currentState)
@@ -209,7 +214,7 @@ public class Building_AutoVoidMiner : Building
 			float productionProgress2 = GetProductionProgress();
 			int remainingProductionTicks2 = GetRemainingProductionTicks();
 			string text3 = FormatTimeFromTicks(remainingProductionTicks2);
-			text = string.Format("{0}: {1:P1} (", "StatusProducing".Translate(), productionProgress2) + "RemainingTime".Translate() + text3 + ")";
+			text = string.Format("{0}: {1:P1} (", "SC_StatusProducing".Translate(), productionProgress2) + "SC_RemainingTime".Translate() + text3 + ")";
 			break;
 		}
 		case CompAutoVoidMiner.ProductionState.Paused:
@@ -217,14 +222,14 @@ public class Building_AutoVoidMiner : Building
 			float productionProgress = GetProductionProgress();
 			int remainingProductionTicks = GetRemainingProductionTicks();
 			string text2 = FormatTimeFromTicks(remainingProductionTicks);
-			text = string.Format("{0}: {1:P1} (", "StatusPaused".Translate(), productionProgress) + "RemainingTime".Translate() + text2 + ")";
+			text = string.Format("{0}: {1:P1} (", "SC_StatusPaused".Translate(), productionProgress) + "SC_RemainingTime".Translate() + text2 + ")";
 			break;
 		}
 		case CompAutoVoidMiner.ProductionState.Stopped:
-			text = "ClickToSelectProductionTarget".Translate();
+			text = "SC_ClickToSelectProductionTarget".Translate();
 			break;
 		}
-		return inspectString + "\n" + "CurrentTarget".Translate(currentProductionTarget.label) + "\n" + "CurrentStatus".Translate() + ": " + text;
+		return inspectString + "\n" + "SC_CurrentTarget".Translate(currentProductionTarget.label) + "\n" + "SC_CurrentStatus".Translate() + ": " + text;
 	}
 
 	public override void ExposeData()

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <SC_AddAndStartProduction>Add and start</SC_AddAndStartProduction>
+    <SC_AllModsLabel>All mods</SC_AllModsLabel>
+    <SC_AllProducibleItemsCount>Items: {0}; allowed: {1}</SC_AllProducibleItemsCount>
+    <SC_AvailableModsLabel>Available sources</SC_AvailableModsLabel>
+    <SC_ClickToSelectProductionTarget>Select a production target</SC_ClickToSelectProductionTarget>
+    <SC_ContinuousProduction>Continuous</SC_ContinuousProduction>
+    <SC_ContinuousProductionStatus>Continuous production</SC_ContinuousProductionStatus>
+    <SC_Count>Count</SC_Count>
+    <SC_CurrentStatus>Status</SC_CurrentStatus>
+    <SC_CurrentTarget>Target: {0}</SC_CurrentTarget>
+    <SC_EccentricCore_AutomatedLaunch>Aurora: launch gravship</SC_EccentricCore_AutomatedLaunch>
+    <SC_EccentricCore_AutomatedLaunchDesc>Let Aurora pilot the gravship. Requires a powered Aurora core and an operational pilot console.</SC_EccentricCore_AutomatedLaunchDesc>
+    <SC_EccentricCore_AutomatedLaunchNoConsole>No pilot console is connected.</SC_EccentricCore_AutomatedLaunchNoConsole>
+    <SC_EccentricCore_AutomatedLaunchRejected>Cannot launch: {0}</SC_EccentricCore_AutomatedLaunchRejected>
+    <SC_ExpectedOutput>Output per cycle: {0}</SC_ExpectedOutput>
+    <SC_FromModLabel>Source: {0}</SC_FromModLabel>
+    <SC_GlobalOutputMultiplierLabel>Output multiplier</SC_GlobalOutputMultiplierLabel>
+    <SC_GlobalTimeMultiplierLabel>Production time multiplier</SC_GlobalTimeMultiplierLabel>
+    <SC_ItemAllowed>Allowed</SC_ItemAllowed>
+    <SC_ItemCanAdd>Can be added</SC_ItemCanAdd>
+    <SC_MaintainQuantity>Maintain stock</SC_MaintainQuantity>
+    <SC_MaintainQuantityStatus>Maintain stock</SC_MaintainQuantityStatus>
+    <SC_ModSelectionTitle>Select source</SC_ModSelectionTitle>
+    <SC_NeedToSetProductionMaterial>Select a production target first.</SC_NeedToSetProductionMaterial>
+    <SC_NoProductionTarget>No production target</SC_NoProductionTarget>
+    <SC_OutputLabel>Output:</SC_OutputLabel>
+    <SC_OutputMinLabel>Minimum output</SC_OutputMinLabel>
+    <SC_PauseProduction>Pause</SC_PauseProduction>
+    <SC_PausedWithProgress>Paused: {0:P1}</SC_PausedWithProgress>
+    <SC_ProducibleItemsTitle>Allowed products</SC_ProducibleItemsTitle>
+    <SC_ProductAddedToAllowed>{0} added to allowed products.</SC_ProductAddedToAllowed>
+    <SC_ProductionControl>Mode:</SC_ProductionControl>
+    <SC_ProductionTargetSet>Production target: {0}</SC_ProductionTargetSet>
+    <SC_ProductionTargetWindowTitle>Void Miner production</SC_ProductionTargetWindowTitle>
+    <SC_ProductionTimeLabel>Cycle time: {0}</SC_ProductionTimeLabel>
+    <SC_ProgressWithRemaining>{0:P1}; remaining: {1}</SC_ProgressWithRemaining>
+    <SC_RemainingTime>remaining: </SC_RemainingTime>
+    <SC_ResetToDefaultsButton>Reset to defaults</SC_ResetToDefaultsButton>
+    <SC_ResumeProduction>Resume</SC_ResumeProduction>
+    <SC_VoidMinerOutputBlocked>Clear space near the Void Miner and resume production to deliver the completed output.</SC_VoidMinerOutputBlocked>
+    <SC_Search>Search:</SC_Search>
+    <SC_SearchAndAddItems>Search all available items and add them to production.</SC_SearchAndAddItems>
+    <SC_SearchResultsCount>Found: {0}; exact: {1}; prefix: {2}; allowed: {3}</SC_SearchResultsCount>
+    <SC_SelectProductionTarget>Select product</SC_SelectProductionTarget>
+    <SC_SelectProductionTargetDesc>Select the product, production mode, and quantity.</SC_SelectProductionTargetDesc>
+    <SC_SingleGeneGenepackDescription>A genepack containing the gene {0}.
+
+{1}</SC_SingleGeneGenepackDescription>
+    <SC_SingleGeneGenepackLabel>Genepack ({0})</SC_SingleGeneGenepackLabel>
+    <SC_SingleProduction>Fixed batches</SC_SingleProduction>
+    <SC_SingleProductionStatus>Fixed batches</SC_SingleProductionStatus>
+    <SC_StartProduction>Start</SC_StartProduction>
+    <SC_StatusPaused>Paused</SC_StatusPaused>
+    <SC_StatusProducing>Producing</SC_StatusProducing>
+    <SC_StatusStopped>Stopped</SC_StatusStopped>
+    <SC_StopProduction>Stop</SC_StopProduction>
+    <SC_TimeFormatDays>{0} d</SC_TimeFormatDays>
+    <SC_TimeFormatDaysHours>{0} d {1} h</SC_TimeFormatDaysHours>
+    <SC_TimeFormatHours>{0} h</SC_TimeFormatHours>
+    <SC_ValueLabel>Value:</SC_ValueLabel>
+    <SC_VoidMinerSettingsCategory>Singularity: Core</SC_VoidMinerSettingsCategory>
+    <SC_WorkAmountLabel>Work:</SC_WorkAmountLabel>
+</LanguageData>

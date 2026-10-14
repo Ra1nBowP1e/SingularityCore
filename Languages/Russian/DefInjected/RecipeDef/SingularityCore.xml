@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Make_Chemfuel_From_Chunks.description>Извлечь и переработать химические соединения из каменных глыб, чтобы получить 25 единиц химического топлива.</Make_Chemfuel_From_Chunks.description>
+    <Make_Chemfuel_From_Chunks.jobString>Переработка каменных глыб в ресурсы.</Make_Chemfuel_From_Chunks.jobString>
+    <Make_Chemfuel_From_Chunks.label>получить химическое топливо из каменных глыб (25)</Make_Chemfuel_From_Chunks.label>
+    <Make_Cloth_From_Chunks.description>Извлечь волокна из каменных глыб и соткать 20 единиц ткани.</Make_Cloth_From_Chunks.description>
+    <Make_Cloth_From_Chunks.jobString>Переработка каменных глыб в ресурсы.</Make_Cloth_From_Chunks.jobString>
+    <Make_Cloth_From_Chunks.label>изготовить ткань из каменных глыб (20)</Make_Cloth_From_Chunks.label>
+    <Make_Component_From_Chunks.description>Получить 5 компонентов путём тщательной переработки каменных глыб.</Make_Component_From_Chunks.description>
+    <Make_Component_From_Chunks.jobString>Переработка каменных глыб в ресурсы.</Make_Component_From_Chunks.jobString>
+    <Make_Component_From_Chunks.label>изготовить компоненты из каменных глыб (5)</Make_Component_From_Chunks.label>
+    <Make_Steel_From_Chunks.description>Извлечь 25 единиц стали из каменных глыб с помощью продвинутых методов обработки.</Make_Steel_From_Chunks.description>
+    <Make_Steel_From_Chunks.jobString>Переработка каменных глыб в ресурсы.</Make_Steel_From_Chunks.jobString>
+    <Make_Steel_From_Chunks.label>извлечь сталь из каменных глыб (25)</Make_Steel_From_Chunks.label>
+    <Make_WoodLog_From_Chunks.description>Извлечь органическое вещество, заключённое в каменных глыбах, и получить 35 единиц древесины.</Make_WoodLog_From_Chunks.description>
+    <Make_WoodLog_From_Chunks.jobString>Переработка каменных глыб в ресурсы.</Make_WoodLog_From_Chunks.jobString>
+    <Make_WoodLog_From_Chunks.label>получить древесину из каменных глыб (35)</Make_WoodLog_From_Chunks.label>
+</LanguageData>

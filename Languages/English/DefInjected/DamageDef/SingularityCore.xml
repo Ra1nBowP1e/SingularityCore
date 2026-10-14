@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <SC_KineticImpact.deathMessage>{0} was crushed by a kinetic impact.</SC_KineticImpact.deathMessage>
+    <SC_KineticImpact.label>kinetic impact</SC_KineticImpact.label>
+    <dvd_CollapseBomb.deathMessage>{0} crumpled within a spatial distortion.</dvd_CollapseBomb.deathMessage>
+    <dvd_CollapseBomb.label>gravbomb</dvd_CollapseBomb.label>
+</LanguageData>

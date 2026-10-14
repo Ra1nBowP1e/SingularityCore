@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <DoBillsSCTable.gerund>working at</DoBillsSCTable.gerund>
+    <DoBillsSCTable.label>work at kinetic field manipulator</DoBillsSCTable.label>
+    <DoBillsSCTable.verb>work</DoBillsSCTable.verb>
+    <SC_OperateAtomicManipulator.gerund>operating at</SC_OperateAtomicManipulator.gerund>
+    <SC_OperateAtomicManipulator.label>operate atomic manipulator</SC_OperateAtomicManipulator.label>
+    <SC_OperateAtomicManipulator.verb>operate</SC_OperateAtomicManipulator.verb>
+</LanguageData>

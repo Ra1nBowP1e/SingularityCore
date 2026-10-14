@@ -106,6 +106,26 @@ public static class SingularityRuntimeChecks
             settings.InitializeAfterDefsLoaded();
             Check(!settings.IsProductAllowed(geneTarget), "removed genes are not silently added back");
             Check("SC_SelectProductionTarget".Translate().ToString() != "SC_SelectProductionTarget", "interface translations loaded");
+            bool russian = Environment.GetEnvironmentVariable("SINGULARITY_TEST_LANGUAGE") == "Russian";
+            Check(building.def.label == (russian ? "автоматический пустотный экстрактор" : "automatic void miner"), "building label localized");
+            Check(DefDatabase<ThingDef>.GetNamed("TE_KineticRifle").label == (russian ? "кинетическая винтовка" : "kinetic rifle"), "weapon label localized");
+            Check(DefDatabase<ThingDef>.GetNamed("Apparel_ReflactorArmor").label == (russian ? "рефлекторная броня" : "reflector carapace"), "armor label localized");
+            Check(DefDatabase<ThingDef>.GetNamed("SC_DarkMatterAlloy").stuffProps.stuffAdjective == (russian ? "сплава тёмной материи" : "dark matter alloy"), "material adjective localized");
+            Check(DefDatabase<HediffDef>.GetNamed("dvd_Vacshock").stages[0].label == (russian ? "лёгкий" : "minor"), "named hediff stage localized");
+            Check(DefDatabase<ThingDef>.GetNamed("Turret_SuvTurret").GetCompProperties<CompProperties_Refuelable>().fuelLabel == (russian ? "Выстрелов до замены ствола" : "Shots until barrel change"), "named turret comp localized");
+            Check(DefDatabase<RecipeDef>.GetNamed("Make_Steel_From_Chunks").jobString == (russian ? "Переработка каменных глыб в ресурсы." : "Converting stone chunks to resources."), "inherited recipe job string localized");
+            Check(DefDatabase<ResearchProjectDef>.GetNamed("Eccentric_Core").label == (russian ? "ядро Авроры" : "aurora core"), "research label localized");
+            Check(DefDatabase<DamageDef>.GetNamed("SC_KineticImpact").deathMessage == (russian ? "Кинетический удар раздавил {0}." : "{0} was crushed by a kinetic impact."), "damage death message localized");
+            var generatedRecipe = DefDatabase<RecipeDef>.GetNamed("Make_TE_KineticRifle");
+            Check(generatedRecipe.label.Contains(russian ? "кинетическ" : "kinetic"), "generated crafting recipe follows the localized item");
+            Check(EccentricTools.CoreUtility.Aurora.Name.ToString().Contains(russian ? "Аврора" : "Aurora"), "Aurora pilot name localized");
+            var language = LanguageDatabase.activeLanguage;
+            var translationErrors = language.loadErrors.Concat(language.defInjections.SelectMany(package => package.loadErrors)).ToList();
+            File.WriteAllLines(Path.Combine(Path.GetDirectoryName(Environment.GetEnvironmentVariable("SINGULARITY_TEST_REPORT")), "translation-errors.txt"), translationErrors);
+            var ownInjections = language.defInjections.SelectMany(package => package.injections.Values)
+                .Where(injection => injection.fileSource == "SingularityCore.xml").ToList();
+            Check(ownInjections.Count == 115 && ownInjections.All(injection => injection.injected),
+                "all 115 mod def translations applied: " + string.Join("; ", ownInjections.Where(injection => !injection.injected).Select(injection => injection.path)));
         }
         catch (Exception error)
         {

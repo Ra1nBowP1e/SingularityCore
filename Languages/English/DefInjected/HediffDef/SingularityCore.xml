@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <dvd_LordlyPromise.description>The central figure of a cloud of combat-refining mechanites, maintained by a direct link to a warcasket control module. So long as this person remains close, allies will fight with haste. Otherwise, the mechanites will rapidly lose cohesion and harmlessly dissipate.</dvd_LordlyPromise.description>
+    <dvd_LordlyPromise.label>lordly promise</dvd_LordlyPromise.label>
+    <dvd_RadiantMechanites.description>An enhanced state of clarity, induced by stimulating mechanites that have migrated to the nervous system. They notably improve cognitive coordination, wakefulness, and reaction times, which are indispensable boons for battle. Requires proximity to the source of the mechanites.</dvd_RadiantMechanites.description>
+    <dvd_RadiantMechanites.label>radiant mechanites</dvd_RadiantMechanites.label>
+    <dvd_Vacshock.description>Generalized damage, both to biology and machines, after being subjected to a collapse weapon's payload without the means to withstand the harsh pressure differential. Intensifies with repeated exposure and dissipates over time.</dvd_Vacshock.description>
+    <dvd_Vacshock.label>vacshock</dvd_Vacshock.label>
+    <dvd_Vacshock.stages.critical.label>critical</dvd_Vacshock.stages.critical.label>
+    <dvd_Vacshock.stages.major.label>major</dvd_Vacshock.stages.major.label>
+    <dvd_Vacshock.stages.minor.label>minor</dvd_Vacshock.stages.minor.label>
+    <dvd_Vacshock.stages.moderate.label>moderate</dvd_Vacshock.stages.moderate.label>
+</LanguageData>

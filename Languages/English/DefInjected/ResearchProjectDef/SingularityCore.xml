@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Eccentric_Core.description>Build a housing for Aurora's persona core, which will enable the decryption of her tech database.</Eccentric_Core.description>
+    <Eccentric_Core.label>aurora core</Eccentric_Core.label>
+    <FocusTech.description>Allows you to build the portable reactor and kinetic lance.</FocusTech.description>
+    <FocusTech.label>focused kinetic field</FocusTech.label>
+    <KineticTech.description>It is a prerequisite to build Tisiphone equipment.</KineticTech.description>
+    <KineticTech.label>kinetic energy conservation gel</KineticTech.label>
+</LanguageData>

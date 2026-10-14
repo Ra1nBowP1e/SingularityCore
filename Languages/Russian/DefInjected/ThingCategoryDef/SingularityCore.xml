@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <GDMBPS.label>модульная броня GD</GDMBPS.label>
+    <GDMBPSH.label>шлемы модульной брони GD</GDMBPSH.label>
+    <GDMRS.label>модульные винтовки GD</GDMRS.label>
+    <GDMSS.label>модульное вспомогательное оружие GD</GDMSS.label>
+    <GDMulti.label>многоствольные пусковые установки GD</GDMulti.label>
+    <GDWeapons.label>оружие GD</GDWeapons.label>
+    <JIWeapons.label>оружие JI</JIWeapons.label>
+    <MRSKit.label>комплект модульного переоборудования Greydale</MRSKit.label>
+    <RSApparels.label>броня мегакорпораций</RSApparels.label>
+    <RSHelmets.label>шлемы мегакорпораций</RSHelmets.label>
+    <TEWeapons.label>оружие TE</TEWeapons.label>
+    <YPWeapons.label>оружие YP</YPWeapons.label>
+</LanguageData>

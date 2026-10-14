@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import re
 import xml.etree.ElementTree as ET
+from localization_fields import required_def_keys
 
 SCALARS = {
     "designationCategory": "DesignationCategoryDef", "researchPrerequisite": "ResearchProjectDef",
@@ -121,6 +122,8 @@ def validate(mod_dir, game_dir):
     about = read_xml(mod_dir / "About" / "About.xml")
     if not re.fullmatch(r"[a-z0-9]+(?:\.[a-z0-9_]+)+", about.findtext("packageId") or ""):
         errors.append("About.xml: packageId must use a dotted author.mod identifier.")
+    required = required_def_keys(mod_dir)
+    catalogs = {}
     for language in ("English", "Russian"):
         translations = set()
         for path in (mod_dir / "Languages" / language / "Keyed").rglob("*.xml"):
@@ -130,6 +133,26 @@ def validate(mod_dir, game_dir):
             used.update(re.findall(r'"(SC_[A-Za-z0-9_]+)"\.Translate\(', path.read_text()))
         for key in sorted(used - translations):
             errors.append(f"{language}: missing interface translation '{key}'")
+        catalog = {}
+        for path in (mod_dir / "Languages" / language).rglob("*.xml"):
+            kind = path.parent.name if "DefInjected" in path.parts else "Keyed"
+            for node in read_xml(path):
+                key = (kind, node.tag)
+                if key in catalog:
+                    errors.append(f"{language}: duplicate translation '{key}'")
+                if not node.text or not node.text.strip():
+                    errors.append(f"{language}: empty translation '{key}'")
+                catalog[key] = node.text or ""
+        for key in sorted(required - catalog.keys()):
+            errors.append(f"{language}: missing def translation '{key}'")
+        catalogs[language] = catalog
+    if catalogs["English"].keys() != catalogs["Russian"].keys():
+        errors.append("English/Russian translation keys do not match.")
+    for key in catalogs["English"].keys() & catalogs["Russian"].keys():
+        english_args = sorted(re.findall(r"\{\d+(?:[^{}]*)\}", catalogs["English"][key]))
+        russian_args = sorted(re.findall(r"\{\d+(?:[^{}]*)\}", catalogs["Russian"][key]))
+        if english_args != russian_args:
+            errors.append(f"Translation format placeholders do not match: '{key}'")
     return errors
 
 

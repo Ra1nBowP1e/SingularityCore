@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Apparel_HazardCarapace.description>Защитная броня «Алекто» предназначена для выполнения задач даже в самых суровых условиях. Экстремальный холод, палящий зной и радиоактивные пустоши не мешают охотникам Tisiphone продолжать неумолимое преследование.</Apparel_HazardCarapace.description>
+    <Apparel_HazardCarapace.label>броня для экстремальных условий</Apparel_HazardCarapace.label>
+    <Apparel_HazardCarapaceH.description>Часть защитного комплекта «Алекто». Этот шлем обеспечивает превосходную защиту от экстремального жара, холода и радиации.</Apparel_HazardCarapaceH.description>
+    <Apparel_HazardCarapaceH.label>шлем для экстремальных условий</Apparel_HazardCarapaceH.label>
+    <Apparel_ReflactorArmor.description>«Немезида» — высокоэффективная силовая броня, разработанная специально для миссий по уничтожению остатков Федерации. Благодаря почти полной устойчивости к тепловому оружию она предназначена для самых элитных бойцов охотничьего контингента Tisiphone.</Apparel_ReflactorArmor.description>
+    <Apparel_ReflactorArmor.label>рефлекторная броня</Apparel_ReflactorArmor.label>
+    <Apparel_ReflactorArmorH.description>Шлем с полноценной системой отражения теплового воздействия.</Apparel_ReflactorArmorH.description>
+    <Apparel_ReflactorArmorH.label>рефлекторный шлем</Apparel_ReflactorArmorH.label>
+    <Bullet_Harrower.label>кинетический импульс</Bullet_Harrower.label>
+    <Bullet_Oppressor.label>кинетический контейнер</Bullet_Oppressor.label>
+    <Bullet_SupTurret.label>сфера сингулярности</Bullet_SupTurret.label>
+    <Bullet_SuvTurret.label>ударный снаряд</Bullet_SuvTurret.label>
+    <Bullet_Tormentor.label>ударный снаряд</Bullet_Tormentor.label>
+    <Bullet_Tyrant.label>ударный снаряд</Bullet_Tyrant.label>
+    <Bullet_Wailer.label>ударный снаряд</Bullet_Wailer.label>
+    <EccentricAuroraCore.description>Компьютерный комплекс с восстановленным персональным ядром Авроры. Содержит зашифрованную базу продвинутых технологий The Eccentric. Подключение к высокотехнологичному исследовательскому столу позволяет воспроизводить эти технологии и создавать соответствующее оборудование.
+
+Аврора — корабельный ИИ военного назначения, способный помогать с продвинутыми исследованиями. Если установить её на гравикорабле с работающей консолью пилота, она также сможет самостоятельно управлять простыми гравикораблями без риска нештатных ситуаций.</EccentricAuroraCore.description>
+    <EccentricAuroraCore.label>ядро Авроры</EccentricAuroraCore.label>
+    <Gun_SupTurret.description>Кинетическая пушка для установки на автоматическую турель.</Gun_SupTurret.description>
+    <Gun_SupTurret.label>проектор сингулярности</Gun_SupTurret.label>
+    <Gun_SuvTurret.description>Точная дальнобойная кинетическая пушка для установки на автоматическую турель.</Gun_SuvTurret.description>
+    <Gun_SuvTurret.label>кинетическая пушка</Gun_SuvTurret.label>
+    <PortableReactor.description>Небольшой переносной реактор, вырабатывающий электричество за счёт потребления урана. Полезен, когда нужен источник энергии, который можно быстро развернуть. Взрывается при разрушении.</PortableReactor.description>
+    <PortableReactor.label>переносной реактор</PortableReactor.label>
+    <SC_AutoVoidMiner.description>Автоматический пустотный экстрактор позволяет получать ресурсы из сингулярности.</SC_AutoVoidMiner.description>
+    <SC_AutoVoidMiner.label>автоматический пустотный экстрактор</SC_AutoVoidMiner.label>
+    <SC_DarkMatterAlloy.description>Чрезвычайно прочный и дорогой материал. Используется для создания наиболее продвинутых видов брони и оружия.</SC_DarkMatterAlloy.description>
+    <SC_DarkMatterAlloy.label>сплав тёмной материи</SC_DarkMatterAlloy.label>
+    <SC_DarkMatterAlloy.stuffProps.stuffAdjective>сплава тёмной материи</SC_DarkMatterAlloy.stuffProps.stuffAdjective>
+    <SC_Mundite.description>Сплав второго класса, предназначенный для государств — участников Конвенции. Обладает чрезвычайно высокой прочностью и при этом почти ничего не весит. Ходят слухи, что его получают из грязи, остающейся после купания девушек-кораблей.</SC_Mundite.description>
+    <SC_Mundite.label>мундит</SC_Mundite.label>
+    <SC_SingularityStones.description>Сверхплотная кристаллическая матрица, стабилизирующая сингулярность энергии нулевой точки. Фундаментальный и незаменимый компонент самых продвинутых космических технологий.</SC_SingularityStones.description>
+    <SC_SingularityStones.label>кристалл энергии нулевой точки</SC_SingularityStones.label>
+    <SC_Workbench.description>Управляет атомами для создания новых материалов.</SC_Workbench.description>
+    <SC_Workbench.label>атомный манипулятор</SC_Workbench.label>
+    <SC_table.description>Рабочий стол с оборудованием для сборки снаряжения Tisiphone Enterprise.</SC_table.description>
+    <SC_table.label>манипулятор кинетического поля</SC_table.label>
+    <TE_KineticLance.description>Направленный излучатель кинетической волны Тип-0 «Мучитель» компании Tisiphone Enterprise.
+
+Создан не ради выживания. Создан из злобы.
+
+«Мучитель» — прямой ответ на механизированную броню Федерации. Это кинетическое копьё ближнего действия создаёт непрерывную сфокусированную ударную волну, способную рассекать композитную броню и сдирать плоть с костей. Оно не поражает цель. Оно уничтожает саму её целостность.
+
+В отличие от большинства видов оружия Tisiphone, оно требует терпения, правильной позиции и тревожно малого расстояния до противника. Небольшая дальность и долгая подготовка делают его обузой в большинстве схваток — до момента выстрела. После этого ничто другое уже не имеет значения.
+
+Плоть содрана. Броня сорвана. Механизированные костюмы смяты. «Мучитель» создан как ответ Tisiphone на громадные боевые машины Федерации и даёт этот ответ одним затяжным, мучительным воплем кинетического насилия.</TE_KineticLance.description>
+    <TE_KineticLance.label>кинетическое копьё</TE_KineticLance.label>
+    <TE_KineticLongRifle.description>Кинетическая ударная винтовка Тип-4 «Плакальщик» компании Tisiphone Enterprise.
+
+Снайперские винтовки должны быть терпеливыми. «Плакальщик» — нет.
+
+Эта скорострельная кинетическая винтовка создана для одной задачи: перестрелять лучших стрелков Федерации прежде, чем они закончат выдох. Разработанная для быстрых контрснайперских операций, она сочетает мощное останавливающее действие с молниеносным захватом цели — редкость для своего класса и крайне неприятное свойство для тех, кто оказался под прицелом. Вместо того чтобы испарять цели, «Плакальщик» предпочитает разбивать их на части: кости, броню и уверенность в себе. Тупые ударные снаряды. Ярость, обретшая физическую форму. Стрельба достаточно быстрая, чтобы уничтожить саму идею честного боя.</TE_KineticLongRifle.description>
+    <TE_KineticLongRifle.label>дальнобойная кинетическая винтовка</TE_KineticLongRifle.label>
+    <TE_KineticPistol.description>Кинетический ударный пистолет Тип-6 «Истязатель» компании Tisiphone Enterprise.
+
+Быстро. Жестоко. Лично.
+
+«Истязатель» — штатное вспомогательное оружие охотничьего контингента Tisiphone. Этот невероятно быстрый кинетический пистолет создан для засад на близкой дистанции, казней и любых задач, требующих одновременно скорости и злобы. Исключительно короткий цикл стрельбы, даже по меркам пистолетов, делает его превосходным оружием для стремительных атак, где важна каждая доля миллисекунды. Он наносит тупые кинетические травмы с мощным останавливающим действием. Это скорее карманная вендетта, чем вспомогательное оружие.</TE_KineticPistol.description>
+    <TE_KineticPistol.label>кинетический пистолет</TE_KineticPistol.label>
+    <TE_KineticRifle.description>Кинетическая ударная винтовка Тип-3 «Тиран» компании Tisiphone Enterprise.
+
+Она не убивает аккуратно. В этом и смысл.
+
+«Тиран» — штатная винтовка охотничьего контингента Tisiphone. Она создана для ближнего боя с единственной целью: наносить тупые травмы быстро и без малейших угрызений совести. Её высокоскоростные кинетические снаряды бьют как кувалда. Винтовка жертвует дальностью и силой отдельного выстрела ради исключительно быстрого цикла стрельбы и мощного останавливающего действия.
+
+Передовая система наведения обеспечивает быстрый захват и активное сопровождение целей. Ведь когда охотишься на отставших бойцов Федерации среди руин, оставленных их грехами, промедление не просто опасно. Оно оскорбительно.</TE_KineticRifle.description>
+    <TE_KineticRifle.label>кинетическая винтовка</TE_KineticRifle.label>
+    <TE_StormCannon.description>Система подавления по площади Тип-22 «Зверство» компании Tisiphone Enterprise.
+
+Она не убивает быстро. Именно поэтому она жестока.
+
+«Зверство» предназначено не для уничтожения врагов, а для срыва их наступления: оно рассеивает боевые порядки и напоминает противнику, что он не контролирует ситуацию. Сосредоточенные залпы слабых кинетических ударов замедляют движение, нарушают строй и постепенно останавливают штурм. Это не штурмовое оружие, а инструмент наказания с большой дальностью.
+
+«Зверства» боятся скорее за то, чего оно лишает, чем за то, что оно разрушает. Своё имя оно заслужило честно: долгими минутами смятения, боли и бессилия, которые доставляет кинетическими ударами.</TE_StormCannon.description>
+    <TE_StormCannon.label>проектор сингулярности</TE_StormCannon.label>
+    <TE_ThuddGun.description>Пусковая установка кинетических контейнеров Тип-11 «Угнетатель» компании Tisiphone Enterprise.
+
+Для случаев, когда их слишком много, а вас слишком мало.
+
+«Угнетатель» — ответ Tisiphone на проблему сдерживания толпы, если толпа не должна выжить. Он стреляет заряженными кинетическими контейнерами, которые взрываются ударными волнами и поражают площадь. Оружие рассчитано на ближний бой, но не стоит обманываться: оно остаётся смертоносным даже на предельной дистанции.
+
+«Угнетатель» мало заботится о точности. Да и зачем? Точность нужна, когда целишься в человека. «Угнетатель» целится в проблемы — сразу во многие. Он обращается к плотным рядам вспомогательных войск Федерации, роям Искателей и всем, кому хватило глупости сбиться в кучу. Громко. Неоднократно. Окончательно.</TE_ThuddGun.description>
+    <TE_ThuddGun.label>кинетический гранатомёт</TE_ThuddGun.label>
+    <Turret_SupTurret.comps.CompRefuelable.fuelGizmoLabel>Прочность ствола</Turret_SupTurret.comps.CompRefuelable.fuelGizmoLabel>
+    <Turret_SupTurret.comps.CompRefuelable.fuelLabel>Выстрелов до замены ствола</Turret_SupTurret.comps.CompRefuelable.fuelLabel>
+    <Turret_SupTurret.comps.CompRefuelable.outOfFuelMessage>Невозможно стрелять: требуется замена ствола</Turret_SupTurret.comps.CompRefuelable.outOfFuelMessage>
+    <Turret_SupTurret.description>Автоматическая турель с проектором сингулярности. Наносит мощные удары по площади, резко замедляя врагов в зоне действия. При разрушении турели возможен кинетический взрыв.</Turret_SupTurret.description>
+    <Turret_SupTurret.label>турель подавления</Turret_SupTurret.label>
+    <Turret_SuvTurret.comps.CompRefuelable.fuelGizmoLabel>Прочность ствола</Turret_SuvTurret.comps.CompRefuelable.fuelGizmoLabel>
+    <Turret_SuvTurret.comps.CompRefuelable.fuelLabel>Выстрелов до замены ствола</Turret_SuvTurret.comps.CompRefuelable.fuelLabel>
+    <Turret_SuvTurret.comps.CompRefuelable.outOfFuelMessage>Невозможно стрелять: требуется замена ствола</Turret_SuvTurret.comps.CompRefuelable.outOfFuelMessage>
+    <Turret_SuvTurret.description>Автоматическая турель с точной дальнобойной кинетической пушкой. Превосходная дальность и точность сочетаются с невысокой прочностью, из-за которой турель уязвима и легко разрушается под огнём. При разрушении возможен кинетический взрыв.</Turret_SuvTurret.description>
+    <Turret_SuvTurret.label>кинетическая снайперская турель</Turret_SuvTurret.label>
+    <dvd_CollapseProjectile.label>коллапсирующая ячейка</dvd_CollapseProjectile.label>
+</LanguageData>

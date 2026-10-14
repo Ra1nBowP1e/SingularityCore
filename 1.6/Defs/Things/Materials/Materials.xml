@@ -3,9 +3,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>SC_SingularityStones</defName>
         <label>zero-point energy crystal</label>
-        <description>An ultra-dense crystalline matrix that stabilizes a zero-point energy
-            singularity. It is a fundamental, irreplaceable component for the most advanced
-            spacer-era technologies.</description>
+        <description>An ultra-dense crystalline matrix that stabilizes a zero-point energy singularity. It is a fundamental, irreplaceable component for the most advanced spacer-era technologies.</description>
         <graphicData>
             <texPath>Things/Materials/APAmmo</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
@@ -30,8 +28,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>SC_DarkMatterAlloy</defName>
         <label>dark matter alloy</label>
-        <description>A very durable and expensive material. Used to make most advanced apparel and
-            weapons</description>
+        <description>An exceptionally durable and expensive material used to make the most advanced armor and weapons.</description>
         <graphicData>
             <texPath>Things/Materials/APAbomb</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
@@ -75,9 +72,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>SC_Mundite</defName>
         <label>Mundite</label>
-        <description>This is a second-class alloy material allocated for use by Convention member
-            states. It possesses extremely high strength while being almost weightless. Rumors
-            suggest it is refined from the grime produced during shipgirls' bathing routines.</description>
+        <description>This is a second-class alloy material allocated for use by Convention member states. It possesses extremely high strength while being almost weightless. Rumors suggest it is refined from the grime produced during shipgirls' bathing routines.</description>
         <graphicData>
             <texPath>Things/Materials/KT_steel</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>

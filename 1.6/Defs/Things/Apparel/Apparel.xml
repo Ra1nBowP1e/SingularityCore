@@ -19,12 +19,9 @@
 
     <ThingDef ParentName="RSApparelMakeableBase">
         <defName>Apparel_ReflactorArmor</defName>
-        <label>reflactor carapace</label>
+        <label>reflector carapace</label>
         <techLevel>Spacer</techLevel>
-        <description>Nemesis is high-performance power armor engineered specifically for
-            extermination missions against Federation remnants. With near-total resistance to
-            heat-based weaponry, it's reserved for the most elite of the Tisiphone Hunter
-            Contingent.</description>
+        <description>Nemesis is high-performance power armor engineered specifically for extermination missions against Federation remnants. With near-total resistance to heat-based weaponry, it's reserved for the most elite of the Tisiphone Hunter Contingent.</description>
         <graphicData>
             <texPath>Things/Apparel/Nemesis</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -94,7 +91,7 @@
 
     <ThingDef ParentName="RSArmorHelmetMakeableBase">
         <defName>Apparel_ReflactorArmorH</defName>
-        <label>Reflactor helmet</label>
+        <label>reflector helmet</label>
         <techLevel>Spacer</techLevel>
         <description>A helmet equipped with a complete heat deflection system.</description>
         <graphicData>
@@ -154,9 +151,7 @@
         <defName>Apparel_HazardCarapace</defName>
         <label>hazard carapace</label>
         <techLevel>Spacer</techLevel>
-        <description>The Alecto Hazard Carapace is designed to carry out missions even in the
-            harshest environments. In extreme cold, scorching heat, or radioactive wastelands,
-            Tisiphone hunters can continue their relentless pursuit.</description>
+        <description>The Alecto Hazard Carapace is designed to carry out missions even in the harshest environments. In extreme cold, scorching heat, or radioactive wastelands, Tisiphone hunters can continue their relentless pursuit.</description>
         <graphicData>
             <texPath>Things/Apparel/HazardCarapace</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -231,8 +226,7 @@
         <defName>Apparel_HazardCarapaceH</defName>
         <label>hazard helmet</label>
         <techLevel>Spacer</techLevel>
-        <description>Part of the Alecto Hazard Carapace set, this helmet offers superior protection
-            against extreme heat, cold, and radiation.</description>
+        <description>Part of the Alecto Hazard Carapace set, this helmet offers superior protection against extreme heat, cold, and radiation.</description>
         <graphicData>
             <texPath>Things/Apparel/HazardCarapaceH</texPath>
             <graphicClass>Graphic_Single</graphicClass>

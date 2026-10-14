@@ -4,14 +4,9 @@
     <ThingDef ParentName="BuildingBase">
         <defName>EccentricAuroraCore</defName>
         <label>Aurora core</label>
-        <description>An AI mainframe housing a reconstruction of Aurora's persona core. It contains
-            the
-            encrypted database of The Eccentric's advanced technologies and, when connected to a
-            high-tech research bench, allows Eccentric technology to be replicated and
-            produced.\n\nAs a
-            military-grade ship persona, Aurora can assist with advanced research. If installed on a gravship with a working
-            pilot console, she can also autonomously operate simple gravships with no chance for
-            mishaps.</description>
+        <description>An AI mainframe housing a reconstruction of Aurora's persona core. It contains the encrypted database of The Eccentric's advanced technologies and, when connected to a high-tech research bench, allows Eccentric technology to be replicated and produced.
+
+As a military-grade ship persona, Aurora can assist with advanced research. If installed on a gravship with a working pilot console, she can also autonomously operate simple gravships with no chance for mishaps.</description>
         <thingClass>EccentricTools.Building_AuroraCore</thingClass>
         <graphicData>
             <texPath>Things/Buildings/AuroraCore</texPath>

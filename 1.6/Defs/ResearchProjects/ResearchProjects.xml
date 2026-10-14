@@ -38,8 +38,7 @@
     <ResearchProjectDef>
         <defName>Eccentric_Core</defName>
         <label>aurora core</label>
-        <description>Build a housing for Aurora's persona core, which will enable the decryption of
-            her tech database.</description>
+        <description>Build a housing for Aurora's persona core, which will enable the decryption of her tech database.</description>
         <baseCost>500</baseCost>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>

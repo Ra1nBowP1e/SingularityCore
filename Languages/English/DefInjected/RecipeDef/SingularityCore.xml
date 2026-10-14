@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Make_Chemfuel_From_Chunks.description>Extract and refine chemical compounds from stone chunks to produce 25 chemfuel.</Make_Chemfuel_From_Chunks.description>
+    <Make_Chemfuel_From_Chunks.jobString>Converting stone chunks to resources.</Make_Chemfuel_From_Chunks.jobString>
+    <Make_Chemfuel_From_Chunks.label>refine chemfuel from stone chunks (25)</Make_Chemfuel_From_Chunks.label>
+    <Make_Cloth_From_Chunks.description>Extract fibers from stone chunks to weave 20 cloth.</Make_Cloth_From_Chunks.description>
+    <Make_Cloth_From_Chunks.jobString>Converting stone chunks to resources.</Make_Cloth_From_Chunks.jobString>
+    <Make_Cloth_From_Chunks.label>weave cloth from stone chunks (20)</Make_Cloth_From_Chunks.label>
+    <Make_Component_From_Chunks.description>Carefully process stone chunks to extract 5 components.</Make_Component_From_Chunks.description>
+    <Make_Component_From_Chunks.jobString>Converting stone chunks to resources.</Make_Component_From_Chunks.jobString>
+    <Make_Component_From_Chunks.label>craft components from stone chunks (5)</Make_Component_From_Chunks.label>
+    <Make_Steel_From_Chunks.description>Use advanced processing techniques to extract 25 steel from stone chunks.</Make_Steel_From_Chunks.description>
+    <Make_Steel_From_Chunks.jobString>Converting stone chunks to resources.</Make_Steel_From_Chunks.jobString>
+    <Make_Steel_From_Chunks.label>smelt steel from stone chunks (25)</Make_Steel_From_Chunks.label>
+    <Make_WoodLog_From_Chunks.description>Extract organic materials compressed in stone chunks to get 35 wood logs.</Make_WoodLog_From_Chunks.description>
+    <Make_WoodLog_From_Chunks.jobString>Converting stone chunks to resources.</Make_WoodLog_From_Chunks.jobString>
+    <Make_WoodLog_From_Chunks.label>process wood from stone chunks (35)</Make_WoodLog_From_Chunks.label>
+</LanguageData>

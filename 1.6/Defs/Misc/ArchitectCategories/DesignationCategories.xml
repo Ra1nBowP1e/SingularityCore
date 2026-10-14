@@ -3,7 +3,7 @@
     <DesignationCategoryDef>
         <defName>SC_Designations</defName>
         <label>singularity tech</label>
-        <description>singularity technologies here</description>
+        <description>Buildings and technologies from Singularity: Core.</description>
         <order>100</order>
     </DesignationCategoryDef>
 </Defs>

@@ -3,15 +3,15 @@
 
     <WorkGiverDef>
         <defName>SC_OperateAtomicManipulator</defName>
-        <label>Operate Machine</label>
+        <label>operate atomic manipulator</label>
         <giverClass>WorkGiver_DoBill</giverClass>
         <workType>Crafting</workType>
         <priorityInType>140</priorityInType>
         <fixedBillGiverDefs>
             <li>SC_Workbench</li>
         </fixedBillGiverDefs>
-        <verb>Operate</verb>
-        <gerund>Operating at</gerund>
+        <verb>operate</verb>
+        <gerund>operating at</gerund>
         <requiredCapacities>
             <li>Manipulation</li>
         </requiredCapacities>
@@ -20,7 +20,7 @@
 
   <WorkGiverDef>
     <defName>DoBillsSCTable</defName>
-    <label>do bills at Tisiphone table</label>
+    <label>work at kinetic field manipulator</label>
     <giverClass>WorkGiver_DoBill</giverClass>
     <workType>Smithing</workType>
     <priorityInType>75</priorityInType>

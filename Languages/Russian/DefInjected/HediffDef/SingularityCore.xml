@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <dvd_LordlyPromise.description>Носитель находится в центре облака механитов, улучшающих боевые способности и поддерживаемых прямой связью с модулем управления боевого саркофага. Пока он рядом, союзники действуют быстрее. За пределами зоны действия механиты быстро теряют согласованность и безвредно рассеиваются.</dvd_LordlyPromise.description>
+    <dvd_LordlyPromise.label>обещание властителя</dvd_LordlyPromise.label>
+    <dvd_RadiantMechanites.description>Стимулирующие механиты проникли в нервную систему и вызывают состояние повышенной ясности сознания. Они улучшают координацию, бодрость и скорость реакции — качества, незаменимые в бою. Эффект требует нахождения рядом с источником механитов.</dvd_RadiantMechanites.description>
+    <dvd_RadiantMechanites.label>сияющие механиты</dvd_RadiantMechanites.label>
+    <dvd_Vacshock.description>Обширные повреждения биологических тканей и механизмов, вызванные воздействием коллапсирующего заряда без защиты от резкого перепада давления. Усиливаются при повторном воздействии и постепенно проходят.</dvd_Vacshock.description>
+    <dvd_Vacshock.label>вакуумный шок</dvd_Vacshock.label>
+    <dvd_Vacshock.stages.critical.label>критический</dvd_Vacshock.stages.critical.label>
+    <dvd_Vacshock.stages.major.label>тяжёлый</dvd_Vacshock.stages.major.label>
+    <dvd_Vacshock.stages.minor.label>лёгкий</dvd_Vacshock.stages.minor.label>
+    <dvd_Vacshock.stages.moderate.label>умеренный</dvd_Vacshock.stages.moderate.label>
+</LanguageData>

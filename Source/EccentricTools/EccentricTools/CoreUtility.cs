@@ -17,7 +17,7 @@ public static class CoreUtility
 	{
 		Pawn pawn = (Pawn)ThingMaker.MakeThing(ThingDefOf.Human);
 		PawnComponentsUtility.CreateInitialComponents(pawn);
-		pawn.Name = new NameTriple("Aurora", "Aurora", "AP-0176");
+		pawn.Name = new NameTriple("SC_AuroraName".Translate(), "SC_AuroraName".Translate(), "AP-0176");
 		pawn.gender = Gender.Female;
 		if (ModsConfig.BiotechActive)
 		{

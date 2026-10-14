@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <SC_KineticImpact.deathMessage>Кинетический удар раздавил {0}.</SC_KineticImpact.deathMessage>
+    <SC_KineticImpact.label>кинетический удар</SC_KineticImpact.label>
+    <dvd_CollapseBomb.deathMessage>Пространственное искажение смяло {0}.</dvd_CollapseBomb.deathMessage>
+    <dvd_CollapseBomb.label>гравитационная бомба</dvd_CollapseBomb.label>
+</LanguageData>

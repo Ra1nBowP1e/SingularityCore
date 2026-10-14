@@ -64,20 +64,11 @@
         <label>kinetic rifle</label>
         <description>Tisiphone Enterprise Type-3 "Tyrant" kinetic blast rifle.
 
-            It doesn’t kill cleanly. That’s the point.
+It doesn’t kill cleanly. That’s the point.
 
-            The Tyrant is the standard-issue rifle of the Tisiphone Hunter Contingent—built for
-            close-quarters combat and designed with one purpose: deliver blunt-force trauma at high
-            speed
-            and with zero remorse. Firing high-velocity kinetic slugs that hit like a sledgehammer,
-            the
-            Tyrant trades range and raw damage for a brutally efficient firing cycle with rock-hard
-            stopping power.
+The Tyrant is the standard-issue rifle of the Tisiphone Hunter Contingent—built for close-quarters combat and designed with one purpose: deliver blunt-force trauma at high speed and with zero remorse. Firing high-velocity kinetic slugs that hit like a sledgehammer, the Tyrant trades range and raw damage for a brutally efficient firing cycle with rock-hard stopping power.
 
-            It’s paired with a cutting-edge targeting system for rapid acquisition and active
-            tracking—because when you’re hunting Federation stragglers through the ruins of their
-            sins,
-            hesitation isn’t just dangerous. It’s disrespectful.</description>
+It’s paired with a cutting-edge targeting system for rapid acquisition and active tracking—because when you’re hunting Federation stragglers through the ruins of their sins, hesitation isn’t just dangerous. It’s disrespectful.</description>
         <graphicData>
             <texPath>Things/Weapons/Tyrant</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -137,18 +128,9 @@
         <label>kinetic pistol</label>
         <description>Tisiphone Enterprise Type-6 “Tormentor” Kinetic Blast Pistol
 
-            Quick. Cruel. Personal.
+Quick. Cruel. Personal.
 
-            The Tormentor is the standard-issue sidearm of the Tisiphone Hunter Contingent—a
-            hair-rising
-            fast kinetic pistol designed for close-range ambushes, executions, and anything else
-            that
-            requires both speed and spite. With an exceptionally short firing cycle—even by pistol
-            standards—it excels in hit-and-run engagements where every fraction of a millisecond
-            counts.
-            It delivers blunt-force kinetic trauma with high stopping power, making it less of a
-            sidearm
-            and more of a pocket-sized vendetta.</description>
+The Tormentor is the standard-issue sidearm of the Tisiphone Hunter Contingent—a hair-raising fast kinetic pistol designed for close-range ambushes, executions, and anything else that requires both speed and spite. With an exceptionally short firing cycle—even by pistol standards—it excels in hit-and-run engagements where every fraction of a millisecond counts. It delivers blunt-force kinetic trauma with high stopping power, making it less of a sidearm and more of a pocket-sized vendetta.</description>
         <graphicData>
             <texPath>Things/Weapons/Tormentor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -214,20 +196,11 @@
         <label>thudd gun</label>
         <description>Tisiphone Enterprise Type-11 “Oppressor” Kinetic Canister Launcher
 
-            For when there’s too many of them, and not enough of you.
+For when there are too many of them, and not enough of you.
 
-            The Oppressor is Tisiphone’s answer to crowd control—assuming the crowd isn’t meant to
-            survive. Firing charged kinetic canisters that detonate in area-blast shockwaves, it’s a
-            close-range weapon by design, but don’t let that fool you: it remains deadly even at its
-            farthest reach.
+The Oppressor is Tisiphone’s answer to crowd control—assuming the crowd isn’t meant to survive. Firing charged kinetic canisters that detonate in area-blast shockwaves, it’s a close-range weapon by design, but don’t let that fool you: it remains deadly even at its farthest reach.
 
-            The Oppressor doesn’t care much about precision. And why should it? Accuracy is a
-            concern when
-            you're aiming at a person. The Oppressor is aimed at problems—plural. It sends a message
-            to
-            massed Federation auxiliaries, swarming Seekers, and anything else foolish enough to
-            cluster.
-            Loudly. Repeatedly. Permanently</description>
+The Oppressor doesn’t care much about precision. And why should it? Accuracy is a concern when you're aiming at a person. The Oppressor is aimed at problems—plural. It sends a message to massed Federation auxiliaries, swarming Seekers, and anything else foolish enough to cluster. Loudly. Repeatedly. Permanently.</description>
         <graphicData>
             <texPath>Things/Weapons/Oppressor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -288,18 +261,9 @@
         <label>kinetic long rifle</label>
         <description>Tisiphone Enterprise Type-4 “Wailer” Kinetic Blast Rifle
 
-            Sniper rifles are supposed to be patient. The Wailer is not.
+Sniper rifles are supposed to be patient. The Wailer is not.
 
-            The Wailer is a fast-firing kinetic marksman rifle engineered for one job: outshoot the
-            Federation’s finest before they finish exhaling. Built for rapid counter-sniper
-            operations, it
-            combines high stopping power with blisteringly fast target acquisition—unusual for its
-            class,
-            and deeply unpleasant for anything downrange. Rather than vaporize its targets, the
-            Wailer
-            prefers to break them apart—bone, armor, and confidence included. Blunt-force slugs.
-            Rage in
-            physical form. Fired fast enough to erase the idea of a fair fight.</description>
+The Wailer is a fast-firing kinetic marksman rifle engineered for one job: outshoot the Federation’s finest before they finish exhaling. Built for rapid counter-sniper operations, it combines high stopping power with blisteringly fast target acquisition—unusual for its class, and deeply unpleasant for anything downrange. Rather than vaporize its targets, the Wailer prefers to break them apart—bone, armor, and confidence included. Blunt-force slugs. Rage in physical form. Fired fast enough to erase the idea of a fair fight.</description>
         <graphicData>
             <texPath>Things/Weapons/Wailer</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -377,19 +341,9 @@
         <label>singularity projector</label>
         <description>Tisiphone Enterprise Type-22 “Atrocity” Area Suppression System
 
-            It doesn’t kill quickly. That’s what makes it cruel.
+It doesn’t kill quickly. That’s what makes it cruel.
 
-            The Atrocity is an area suppression weapon designed not to eliminate enemies, but to
-            break
-            their momentum, scatter their ranks, and remind them they’re not in control. Firing
-            concentrated volleys of low-damage kinetic blasts, it slows movement, distorts
-            formations, and
-            grinds assaults to a halt. It’s not an assault weapon. It’s a disciplinary tool—with
-            range.
-            Feared more for what it denies than what it destroys, the Atrocity earned its name the
-            honest
-            way: through long minutes of confusion, pain, and frustration, delivered in kinetic
-            blasts.</description>
+The Atrocity is an area suppression weapon designed not to eliminate enemies, but to break their momentum, scatter their ranks, and remind them they’re not in control. Firing concentrated volleys of low-damage kinetic blasts, it slows movement, distorts formations, and grinds assaults to a halt. It’s not an assault weapon. It’s a disciplinary tool—with range. Feared more for what it denies than what it destroys, the Atrocity earned its name the honest way: through long minutes of confusion, pain, and frustration, delivered in kinetic blasts.</description>
         <graphicData>
             <texPath>Things/Weapons/Atrocity</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -465,24 +419,13 @@
         <label>kinetic lance</label>
         <description>Tisiphone Enterprise Type-0 “Harrower” Directional Kinetic Wave Projector
 
-            Not built for survivability. Built for spite.
+Not built for survivability. Built for spite.
 
-            The Harrower is the blunt answer to the Federation’s mechsuits—a close-range kinetic
-            lance
-            that projects a continuous, focused shockwave capable of carving through composite armor
-            and
-            flaying flesh from bone. It doesn’t hit its targets. It unmakes them.
+The Harrower is the blunt answer to the Federation’s mechsuits—a close-range kinetic lance that projects a continuous, focused shockwave capable of carving through composite armor and flaying flesh from bone. It doesn’t hit its targets. It unmakes them.
 
-            Unlike most Tisiphone weapons, it demands patience, positioning, and a disturbing level
-            of
-            proximity. Its short range and long charge-up time make it a liability in most
-            engagements—until it fires. Then nothing matters.
+Unlike most Tisiphone weapons, it demands patience, positioning, and a disturbing level of proximity. Its short range and long charge-up time make it a liability in most engagements—until it fires. Then nothing matters.
 
-            Flesh is stripped. Armor is peeled. Mechsuits buckle. The Harrower was built as
-            Tisiphone’s
-            answer to the Federation’s towering war hulks, and it delivers that answer in one
-            drawn-out,
-            agonizing scream of kinetic violence.</description>
+Flesh is stripped. Armor is peeled. Mechsuits buckle. The Harrower was built as Tisiphone’s answer to the Federation’s towering war hulks, and it delivers that answer in one drawn-out, agonizing scream of kinetic violence.</description>
         <graphicData>
             <texPath>Things/Weapons/Harrower</texPath>
             <graphicClass>Graphic_Single</graphicClass>

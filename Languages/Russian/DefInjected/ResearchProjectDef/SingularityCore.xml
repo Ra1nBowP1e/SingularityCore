@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Eccentric_Core.description>Создать корпус для персонального ядра Авроры, который позволит расшифровать её базу технологических данных.</Eccentric_Core.description>
+    <Eccentric_Core.label>ядро Авроры</Eccentric_Core.label>
+    <FocusTech.description>Позволяет создавать переносной реактор и кинетическое копьё.</FocusTech.description>
+    <FocusTech.label>сфокусированное кинетическое поле</FocusTech.label>
+    <KineticTech.description>Технология, необходимая для создания снаряжения Tisiphone.</KineticTech.description>
+    <KineticTech.label>гель сохранения кинетической энергии</KineticTech.label>
+</LanguageData>

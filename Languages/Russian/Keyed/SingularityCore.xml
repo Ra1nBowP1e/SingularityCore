@@ -3,7 +3,7 @@
     <SC_AddAndStartProduction>Добавить и начать</SC_AddAndStartProduction>
     <SC_AllModsLabel>Все моды</SC_AllModsLabel>
     <SC_AllProducibleItemsCount>Предметов: {0}; разрешено: {1}</SC_AllProducibleItemsCount>
-    <SC_AvailableModsLabel>Доступные источники</SC_AvailableModsLabel>
+    <SC_AvailableModsLabel>Доступные источники: {0}/{1}</SC_AvailableModsLabel>
     <SC_ClickToSelectProductionTarget>Выберите предмет для производства</SC_ClickToSelectProductionTarget>
     <SC_ContinuousProduction>Непрерывно</SC_ContinuousProduction>
     <SC_ContinuousProductionStatus>Непрерывное производство</SC_ContinuousProductionStatus>
@@ -33,13 +33,13 @@
     <SC_ProductAddedToAllowed>{0} добавлен в список разрешённых предметов.</SC_ProductAddedToAllowed>
     <SC_ProductionControl>Режим:</SC_ProductionControl>
     <SC_ProductionTargetSet>Предмет для производства: {0}</SC_ProductionTargetSet>
-    <SC_ProductionTargetWindowTitle>Производство Void Miner</SC_ProductionTargetWindowTitle>
+    <SC_ProductionTargetWindowTitle>Пустотный экстрактор: производство</SC_ProductionTargetWindowTitle>
     <SC_ProductionTimeLabel>Время цикла: {0}</SC_ProductionTimeLabel>
     <SC_ProgressWithRemaining>{0:P1}; осталось: {1}</SC_ProgressWithRemaining>
     <SC_RemainingTime>осталось: </SC_RemainingTime>
     <SC_ResetToDefaultsButton>Сбросить настройки</SC_ResetToDefaultsButton>
     <SC_ResumeProduction>Продолжить</SC_ResumeProduction>
-    <SC_VoidMinerOutputBlocked>Освободите место рядом с Void Miner и продолжите производство, чтобы выгрузить готовые предметы.</SC_VoidMinerOutputBlocked>
+    <SC_VoidMinerOutputBlocked>Освободите место рядом с пустотным экстрактором и продолжите производство, чтобы выгрузить готовые предметы.</SC_VoidMinerOutputBlocked>
     <SC_Search>Поиск:</SC_Search>
     <SC_SearchAndAddItems>Ищите доступные предметы и добавляйте их в производство.</SC_SearchAndAddItems>
     <SC_SearchResultsCount>Найдено: {0}; точных: {1}; по началу: {2}; разрешено: {3}</SC_SearchResultsCount>
@@ -62,4 +62,6 @@
     <SC_ValueLabel>Стоимость:</SC_ValueLabel>
     <SC_VoidMinerSettingsCategory>Singularity: Core</SC_VoidMinerSettingsCategory>
     <SC_WorkAmountLabel>Работа:</SC_WorkAmountLabel>
+    <SC_AuroraName>Аврора</SC_AuroraName>
+    <SC_StatusProgressWithRemaining>{0}: {1:P1} (осталось: {2})</SC_StatusProgressWithRemaining>
 </LanguageData>

@@ -10,6 +10,7 @@ import tempfile
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--game-dir", required=True, type=Path)
 parser.add_argument("--dotnet", default="dotnet")
+parser.add_argument("--language", choices=("English", "Russian"), default="English")
 args = parser.parse_args()
 repo = Path(__file__).resolve().parents[1]
 game = args.game_dir.resolve()
@@ -38,8 +39,10 @@ config = runtime / "SaveData" / "Config"
 config.mkdir(parents=True)
 mods = ["ludeon.rimworld", "ludeon.rimworld.royalty", "ludeon.rimworld.ideology", "ludeon.rimworld.biotech", "ludeon.rimworld.anomaly", "ludeon.rimworld.odyssey", "vazyan.singularitycore", "vazyan.singularitychecks"]
 (config / "ModsConfig.xml").write_text("<ModsConfigData><version>1.6</version><activeMods>" + "".join("<li>" + name + "</li>" for name in mods) + "</activeMods></ModsConfigData>")
+language_folder = next(p.stem if p.is_file() else p.name for p in (game / "Data/Core/Languages").iterdir() if p.name == args.language or p.name.startswith(args.language + " "))
+(config / "Prefs.xml").write_text("<PrefsData><langFolderName>" + language_folder + "</langFolderName></PrefsData>")
 report = runtime / "results.txt"
-env = dict(os.environ, SINGULARITY_TEST_REPORT=str(report))
+env = dict(os.environ, SINGULARITY_TEST_REPORT=str(report), SINGULARITY_TEST_LANGUAGE=args.language)
 print(f"Isolated runtime: {runtime}", flush=True)
 try:
     subprocess.run([str(runtime / "RimWorldLinux"), "-batchmode", "-nographics", "-savedatafolder=" + str(runtime / "SaveData"), "-logfile", str(runtime / "Player.log")], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, timeout=180)

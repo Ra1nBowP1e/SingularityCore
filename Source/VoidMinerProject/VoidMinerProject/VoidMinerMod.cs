@@ -394,7 +394,7 @@ public class VoidMinerMod : Mod
 		}
 		catch (Exception arg)
 		{
-			Log.Error($"[VoidExtractor] 构建物品缓存时发生错误: {arg}");
+			Log.Error($"[SingularityCore] Error building the product cache: {arg}");
 			ClearItemCache();
 		}
 	}
@@ -548,7 +548,7 @@ public class VoidMinerMod : Mod
 		}
 		catch (Exception arg)
 		{
-			Log.Error($"[VoidExtractor] 预加载时发生错误: {arg}");
+			Log.Error($"[SingularityCore] Error preloading the product cache: {arg}");
 		}
 		finally
 		{

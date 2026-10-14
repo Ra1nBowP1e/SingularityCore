@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <GDMBPS.label>GD Modular Body Protection System</GDMBPS.label>
+    <GDMBPSH.label>GD Modular Body Protection System Helmets</GDMBPSH.label>
+    <GDMRS.label>GD Modular Rifle System</GDMRS.label>
+    <GDMSS.label>GD Modular Sidearm System</GDMSS.label>
+    <GDMulti.label>GD Multi Launchers</GDMulti.label>
+    <GDWeapons.label>GD weapons</GDWeapons.label>
+    <JIWeapons.label>JI weapons</JIWeapons.label>
+    <MRSKit.label>Greydale modular conversion kit</MRSKit.label>
+    <RSApparels.label>megacorp armors</RSApparels.label>
+    <RSHelmets.label>megacorp headgears</RSHelmets.label>
+    <TEWeapons.label>TE weapons</TEWeapons.label>
+    <YPWeapons.label>YP weapons</YPWeapons.label>
+</LanguageData>

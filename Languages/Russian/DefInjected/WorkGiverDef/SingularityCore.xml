@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <DoBillsSCTable.gerund>изготовление на</DoBillsSCTable.gerund>
+    <DoBillsSCTable.label>работа на манипуляторе кинетического поля</DoBillsSCTable.label>
+    <DoBillsSCTable.verb>изготавливать</DoBillsSCTable.verb>
+    <SC_OperateAtomicManipulator.gerund>обработка на</SC_OperateAtomicManipulator.gerund>
+    <SC_OperateAtomicManipulator.label>работа на атомном манипуляторе</SC_OperateAtomicManipulator.label>
+    <SC_OperateAtomicManipulator.verb>обрабатывать</SC_OperateAtomicManipulator.verb>
+</LanguageData>

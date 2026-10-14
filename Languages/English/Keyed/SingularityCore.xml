@@ -3,7 +3,7 @@
     <SC_AddAndStartProduction>Add and start</SC_AddAndStartProduction>
     <SC_AllModsLabel>All mods</SC_AllModsLabel>
     <SC_AllProducibleItemsCount>Items: {0}; allowed: {1}</SC_AllProducibleItemsCount>
-    <SC_AvailableModsLabel>Available sources</SC_AvailableModsLabel>
+    <SC_AvailableModsLabel>Available sources: {0}/{1}</SC_AvailableModsLabel>
     <SC_ClickToSelectProductionTarget>Select a production target</SC_ClickToSelectProductionTarget>
     <SC_ContinuousProduction>Continuous</SC_ContinuousProduction>
     <SC_ContinuousProductionStatus>Continuous production</SC_ContinuousProductionStatus>
@@ -62,4 +62,6 @@
     <SC_ValueLabel>Value:</SC_ValueLabel>
     <SC_VoidMinerSettingsCategory>Singularity: Core</SC_VoidMinerSettingsCategory>
     <SC_WorkAmountLabel>Work:</SC_WorkAmountLabel>
+    <SC_AuroraName>Aurora</SC_AuroraName>
+    <SC_StatusProgressWithRemaining>{0}: {1:P1} (remaining: {2})</SC_StatusProgressWithRemaining>
 </LanguageData>

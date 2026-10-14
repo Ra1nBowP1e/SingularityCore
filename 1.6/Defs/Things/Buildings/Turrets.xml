@@ -49,10 +49,8 @@
 
     <ThingDef ParentName="SuvTurret">
         <defName>Turret_SuvTurret</defName>
-        <label>kinetic sniper Turret</label>
-        <description>an automated turret armed with a long-range, precision kinetic cannon. While
-            offering excellent range and accuracy, its low durability makes it vulnerable and easily
-            destroyed once engaged. Destruction can result in a Kinetic Impact explosion.</description>
+        <label>kinetic sniper turret</label>
+        <description>An automated turret armed with a long-range, precision kinetic cannon. While offering excellent range and accuracy, its low durability makes it vulnerable and easily destroyed once engaged. Destruction can result in a Kinetic Impact explosion.</description>
         <uiIconPath>Things/Buildings/SurveillanceTurret_Icon</uiIconPath>
         <uiIconScale>0.90</uiIconScale>
         <minifiedDef>MinifiedThing</minifiedDef>
@@ -134,8 +132,7 @@
     <ThingDef ParentName="BaseWeaponTurret">
         <defName>Gun_SuvTurret</defName>
         <label>kinetic cannon</label>
-        <description>A precision long-ranged kinetic cannon designed to be installed on an automated
-            turret.</description>
+        <description>A precision long-ranged kinetic cannon designed to be installed on an automated turret.</description>
         <graphicData>
             <texPath>Things/Buildings/SurveillanceGun</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -171,9 +168,7 @@
     <ThingDef ParentName="SuvTurret">
         <defName>Turret_SupTurret</defName>
         <label>suppressor turret</label>
-        <description>an automated turret armed with a singularity projector that unleashes powerful
-            area-of-effect attacks, drastically slowing any enemies caught in its field. Destroying
-            the turret may sets off a kinetic-impact explosion.</description>
+        <description>An automated turret armed with a singularity projector that unleashes powerful area-of-effect attacks, drastically slowing any enemies caught in its field. Destroying the turret may set off a kinetic-impact explosion.</description>
         <uiIconPath>Things/Buildings/SuppressorTurret_Icon</uiIconPath>
         <uiIconScale>0.90</uiIconScale>
         <minifiedDef>MinifiedThing</minifiedDef>

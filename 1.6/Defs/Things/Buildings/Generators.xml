@@ -47,9 +47,7 @@
             <MarketValue>2500</MarketValue>
         </statBases>
         <tickerType>Normal</tickerType>
-        <description>A small, portable field reactor that produces power by consuming uranium. It is
-            useful when you need a power source that can be deployed quickly. Explodes when
-            destroyed.</description>
+        <description>A small, portable field reactor that produces power by consuming uranium. It is useful when you need a power source that can be deployed quickly. Explodes when destroyed.</description>
         <size>(1,1)</size>
         <comps>
             <li Class="CompProperties_Refuelable">

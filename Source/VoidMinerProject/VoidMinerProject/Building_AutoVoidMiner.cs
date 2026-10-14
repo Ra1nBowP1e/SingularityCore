@@ -214,7 +214,7 @@ public class Building_AutoVoidMiner : Building
 			float productionProgress2 = GetProductionProgress();
 			int remainingProductionTicks2 = GetRemainingProductionTicks();
 			string text3 = FormatTimeFromTicks(remainingProductionTicks2);
-			text = string.Format("{0}: {1:P1} (", "SC_StatusProducing".Translate(), productionProgress2) + "SC_RemainingTime".Translate() + text3 + ")";
+			text = "SC_StatusProgressWithRemaining".Translate("SC_StatusProducing".Translate(), productionProgress2, text3);
 			break;
 		}
 		case CompAutoVoidMiner.ProductionState.Paused:
@@ -222,7 +222,7 @@ public class Building_AutoVoidMiner : Building
 			float productionProgress = GetProductionProgress();
 			int remainingProductionTicks = GetRemainingProductionTicks();
 			string text2 = FormatTimeFromTicks(remainingProductionTicks);
-			text = string.Format("{0}: {1:P1} (", "SC_StatusPaused".Translate(), productionProgress) + "SC_RemainingTime".Translate() + text2 + ")";
+			text = "SC_StatusProgressWithRemaining".Translate("SC_StatusPaused".Translate(), productionProgress, text2);
 			break;
 		}
 		case CompAutoVoidMiner.ProductionState.Stopped:

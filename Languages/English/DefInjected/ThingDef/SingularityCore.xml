@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+    <Apparel_HazardCarapace.description>The Alecto Hazard Carapace is designed to carry out missions even in the harshest environments. In extreme cold, scorching heat, or radioactive wastelands, Tisiphone hunters can continue their relentless pursuit.</Apparel_HazardCarapace.description>
+    <Apparel_HazardCarapace.label>hazard carapace</Apparel_HazardCarapace.label>
+    <Apparel_HazardCarapaceH.description>Part of the Alecto Hazard Carapace set, this helmet offers superior protection against extreme heat, cold, and radiation.</Apparel_HazardCarapaceH.description>
+    <Apparel_HazardCarapaceH.label>hazard helmet</Apparel_HazardCarapaceH.label>
+    <Apparel_ReflactorArmor.description>Nemesis is high-performance power armor engineered specifically for extermination missions against Federation remnants. With near-total resistance to heat-based weaponry, it's reserved for the most elite of the Tisiphone Hunter Contingent.</Apparel_ReflactorArmor.description>
+    <Apparel_ReflactorArmor.label>reflector carapace</Apparel_ReflactorArmor.label>
+    <Apparel_ReflactorArmorH.description>A helmet equipped with a complete heat deflection system.</Apparel_ReflactorArmorH.description>
+    <Apparel_ReflactorArmorH.label>reflector helmet</Apparel_ReflactorArmorH.label>
+    <Bullet_Harrower.label>kinetic energy</Bullet_Harrower.label>
+    <Bullet_Oppressor.label>kinetic canister</Bullet_Oppressor.label>
+    <Bullet_SupTurret.label>singularity sphere</Bullet_SupTurret.label>
+    <Bullet_SuvTurret.label>impact shell</Bullet_SuvTurret.label>
+    <Bullet_Tormentor.label>impact shell</Bullet_Tormentor.label>
+    <Bullet_Tyrant.label>impact shell</Bullet_Tyrant.label>
+    <Bullet_Wailer.label>impact shell</Bullet_Wailer.label>
+    <EccentricAuroraCore.description>An AI mainframe housing a reconstruction of Aurora's persona core. It contains the encrypted database of The Eccentric's advanced technologies and, when connected to a high-tech research bench, allows Eccentric technology to be replicated and produced.
+
+As a military-grade ship persona, Aurora can assist with advanced research. If installed on a gravship with a working pilot console, she can also autonomously operate simple gravships with no chance for mishaps.</EccentricAuroraCore.description>
+    <EccentricAuroraCore.label>Aurora core</EccentricAuroraCore.label>
+    <Gun_SupTurret.description>A kinetic cannon designed to be installed on an automated turret.</Gun_SupTurret.description>
+    <Gun_SupTurret.label>singularity projector</Gun_SupTurret.label>
+    <Gun_SuvTurret.description>A precision long-ranged kinetic cannon designed to be installed on an automated turret.</Gun_SuvTurret.description>
+    <Gun_SuvTurret.label>kinetic cannon</Gun_SuvTurret.label>
+    <PortableReactor.description>A small, portable field reactor that produces power by consuming uranium. It is useful when you need a power source that can be deployed quickly. Explodes when destroyed.</PortableReactor.description>
+    <PortableReactor.label>portable reactor</PortableReactor.label>
+    <SC_AutoVoidMiner.description>An automatic void miner that extracts resources from a singularity.</SC_AutoVoidMiner.description>
+    <SC_AutoVoidMiner.label>automatic void miner</SC_AutoVoidMiner.label>
+    <SC_DarkMatterAlloy.description>An exceptionally durable and expensive material used to make the most advanced armor and weapons.</SC_DarkMatterAlloy.description>
+    <SC_DarkMatterAlloy.label>dark matter alloy</SC_DarkMatterAlloy.label>
+    <SC_DarkMatterAlloy.stuffProps.stuffAdjective>dark matter alloy</SC_DarkMatterAlloy.stuffProps.stuffAdjective>
+    <SC_Mundite.description>This is a second-class alloy material allocated for use by Convention member states. It possesses extremely high strength while being almost weightless. Rumors suggest it is refined from the grime produced during shipgirls' bathing routines.</SC_Mundite.description>
+    <SC_Mundite.label>Mundite</SC_Mundite.label>
+    <SC_SingularityStones.description>An ultra-dense crystalline matrix that stabilizes a zero-point energy singularity. It is a fundamental, irreplaceable component for the most advanced spacer-era technologies.</SC_SingularityStones.description>
+    <SC_SingularityStones.label>zero-point energy crystal</SC_SingularityStones.label>
+    <SC_Workbench.description>Manipulates atoms to create new materials.</SC_Workbench.description>
+    <SC_Workbench.label>atomic manipulator</SC_Workbench.label>
+    <SC_table.description>A worktable equipped for assembling Tisiphone Enterprise equipment.</SC_table.description>
+    <SC_table.label>kinetic field manipulator</SC_table.label>
+    <TE_KineticLance.description>Tisiphone Enterprise Type-0 “Harrower” Directional Kinetic Wave Projector
+
+Not built for survivability. Built for spite.
+
+The Harrower is the blunt answer to the Federation’s mechsuits—a close-range kinetic lance that projects a continuous, focused shockwave capable of carving through composite armor and flaying flesh from bone. It doesn’t hit its targets. It unmakes them.
+
+Unlike most Tisiphone weapons, it demands patience, positioning, and a disturbing level of proximity. Its short range and long charge-up time make it a liability in most engagements—until it fires. Then nothing matters.
+
+Flesh is stripped. Armor is peeled. Mechsuits buckle. The Harrower was built as Tisiphone’s answer to the Federation’s towering war hulks, and it delivers that answer in one drawn-out, agonizing scream of kinetic violence.</TE_KineticLance.description>
+    <TE_KineticLance.label>kinetic lance</TE_KineticLance.label>
+    <TE_KineticLongRifle.description>Tisiphone Enterprise Type-4 “Wailer” Kinetic Blast Rifle
+
+Sniper rifles are supposed to be patient. The Wailer is not.
+
+The Wailer is a fast-firing kinetic marksman rifle engineered for one job: outshoot the Federation’s finest before they finish exhaling. Built for rapid counter-sniper operations, it combines high stopping power with blisteringly fast target acquisition—unusual for its class, and deeply unpleasant for anything downrange. Rather than vaporize its targets, the Wailer prefers to break them apart—bone, armor, and confidence included. Blunt-force slugs. Rage in physical form. Fired fast enough to erase the idea of a fair fight.</TE_KineticLongRifle.description>
+    <TE_KineticLongRifle.label>kinetic long rifle</TE_KineticLongRifle.label>
+    <TE_KineticPistol.description>Tisiphone Enterprise Type-6 “Tormentor” Kinetic Blast Pistol
+
+Quick. Cruel. Personal.
+
+The Tormentor is the standard-issue sidearm of the Tisiphone Hunter Contingent—a hair-raising fast kinetic pistol designed for close-range ambushes, executions, and anything else that requires both speed and spite. With an exceptionally short firing cycle—even by pistol standards—it excels in hit-and-run engagements where every fraction of a millisecond counts. It delivers blunt-force kinetic trauma with high stopping power, making it less of a sidearm and more of a pocket-sized vendetta.</TE_KineticPistol.description>
+    <TE_KineticPistol.label>kinetic pistol</TE_KineticPistol.label>
+    <TE_KineticRifle.description>Tisiphone Enterprise Type-3 "Tyrant" kinetic blast rifle.
+
+It doesn’t kill cleanly. That’s the point.
+
+The Tyrant is the standard-issue rifle of the Tisiphone Hunter Contingent—built for close-quarters combat and designed with one purpose: deliver blunt-force trauma at high speed and with zero remorse. Firing high-velocity kinetic slugs that hit like a sledgehammer, the Tyrant trades range and raw damage for a brutally efficient firing cycle with rock-hard stopping power.
+
+It’s paired with a cutting-edge targeting system for rapid acquisition and active tracking—because when you’re hunting Federation stragglers through the ruins of their sins, hesitation isn’t just dangerous. It’s disrespectful.</TE_KineticRifle.description>
+    <TE_KineticRifle.label>kinetic rifle</TE_KineticRifle.label>
+    <TE_StormCannon.description>Tisiphone Enterprise Type-22 “Atrocity” Area Suppression System
+
+It doesn’t kill quickly. That’s what makes it cruel.
+
+The Atrocity is an area suppression weapon designed not to eliminate enemies, but to break their momentum, scatter their ranks, and remind them they’re not in control. Firing concentrated volleys of low-damage kinetic blasts, it slows movement, distorts formations, and grinds assaults to a halt. It’s not an assault weapon. It’s a disciplinary tool—with range. Feared more for what it denies than what it destroys, the Atrocity earned its name the honest way: through long minutes of confusion, pain, and frustration, delivered in kinetic blasts.</TE_StormCannon.description>
+    <TE_StormCannon.label>singularity projector</TE_StormCannon.label>
+    <TE_ThuddGun.description>Tisiphone Enterprise Type-11 “Oppressor” Kinetic Canister Launcher
+
+For when there are too many of them, and not enough of you.
+
+The Oppressor is Tisiphone’s answer to crowd control—assuming the crowd isn’t meant to survive. Firing charged kinetic canisters that detonate in area-blast shockwaves, it’s a close-range weapon by design, but don’t let that fool you: it remains deadly even at its farthest reach.
+
+The Oppressor doesn’t care much about precision. And why should it? Accuracy is a concern when you're aiming at a person. The Oppressor is aimed at problems—plural. It sends a message to massed Federation auxiliaries, swarming Seekers, and anything else foolish enough to cluster. Loudly. Repeatedly. Permanently.</TE_ThuddGun.description>
+    <TE_ThuddGun.label>thudd gun</TE_ThuddGun.label>
+    <Turret_SupTurret.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</Turret_SupTurret.comps.CompRefuelable.fuelGizmoLabel>
+    <Turret_SupTurret.comps.CompRefuelable.fuelLabel>Shots until barrel change</Turret_SupTurret.comps.CompRefuelable.fuelLabel>
+    <Turret_SupTurret.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new barrel</Turret_SupTurret.comps.CompRefuelable.outOfFuelMessage>
+    <Turret_SupTurret.description>An automated turret armed with a singularity projector that unleashes powerful area-of-effect attacks, drastically slowing any enemies caught in its field. Destroying the turret may set off a kinetic-impact explosion.</Turret_SupTurret.description>
+    <Turret_SupTurret.label>suppressor turret</Turret_SupTurret.label>
+    <Turret_SuvTurret.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</Turret_SuvTurret.comps.CompRefuelable.fuelGizmoLabel>
+    <Turret_SuvTurret.comps.CompRefuelable.fuelLabel>Shots until barrel change</Turret_SuvTurret.comps.CompRefuelable.fuelLabel>
+    <Turret_SuvTurret.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new barrel</Turret_SuvTurret.comps.CompRefuelable.outOfFuelMessage>
+    <Turret_SuvTurret.description>An automated turret armed with a long-range, precision kinetic cannon. While offering excellent range and accuracy, its low durability makes it vulnerable and easily destroyed once engaged. Destruction can result in a Kinetic Impact explosion.</Turret_SuvTurret.description>
+    <Turret_SuvTurret.label>kinetic sniper turret</Turret_SuvTurret.label>
+    <dvd_CollapseProjectile.label>collapse cell</dvd_CollapseProjectile.label>
+</LanguageData>

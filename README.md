@@ -38,6 +38,6 @@ In-game checks should use only Core, official DLC and Singularity: Core. Check b
 - Corrected the toxic-protection patch and moved workgivers, sound defs and facility patches into their corresponding folders.
 - Void Miner honors manual pauses, waits for power after target selection, retains finished output if placement is blocked, emits complete batches across multiple stacks, counts single-gene packs by their contents, and preserves cycle duration across save/load.
 - Cached drawing resources and product lists, staggered stock checks every 250 ticks, limited production-list drawing to visible rows, and removed settings writes during every UI frame.
-- Added English/Russian interface strings with namespaced keys. Fixed the package ID to `vazyan.singularitycore`; enable that entry again when using a config that stored the old invalid ID.
+- Added English/Russian localization for all readable mod defs and UI strings with namespaced keys. See [localization coverage](docs/LOCALIZATION.md). Fixed the package ID to `vazyan.singularitycore`; enable that entry again when using a config that stored the old invalid ID.
 
 Existing prices, damage amounts and armor values are retained. The atomic manipulator uses vanilla Fabrication as a temporary prerequisite until the full progression is designed. The singularity projector has a small forced-miss radius because the 1.6 engine requires that setting for explosive projectiles.

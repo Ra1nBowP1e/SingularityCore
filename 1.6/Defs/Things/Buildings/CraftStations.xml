@@ -4,7 +4,7 @@
         <defName>SC_table</defName>
         <label>kinetic field manipulator</label>
         <thingClass>Building_WorkTable</thingClass>
-        <description>A table with equipments for assembling Tisiphone Enterprise equipments.</description>
+        <description>A worktable equipped for assembling Tisiphone Enterprise equipment.</description>
         <graphicData>
             <texPath>Things/Buildings/TETable</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -71,8 +71,8 @@
 
     <ThingDef ParentName="BuildingBase">
         <defName>SC_AutoVoidMiner</defName>
-        <label>auto void miner</label>
-        <description>auto void miner provides ability to get resources from singularity</description>
+        <label>automatic void miner</label>
+        <description>An automatic void miner that extracts resources from a singularity.</description>
         <thingClass>VoidMinerProject.Building_AutoVoidMiner</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>

@@ -23,6 +23,21 @@ Compile both projects and run the def checker against the 1.6 installation:
 
 ```sh
 python3 tools/validate_mod.py --game-dir "/path/to/RimWorld"
+python3 tools/run_runtime_checks.py --game-dir "/path/to/RimWorld" --dotnet "/path/to/dotnet"
 ```
 
-In-game checks should use only Core, official DLC and Singularity: Core. Check the startup log, both worktables, Aurora research facilities, Void Miner production/pause/power loss/save-load, and weapon/turret fire. Static validation and compilation do not replace these gameplay checks.
+The runtime runner uses the Linux 1.6 player with Core, all official DLC, this mod and a small test-only assembly. It creates its own game directory, config, logs and save data in a temporary directory, validates the actual loaded defs, and tests the actual Void Miner component. It never changes your normal mod list or saves. Null graphics mode produces Unity shader/atlas errors; the test report covers XML/code rather than rendering.
+
+In-game checks should use only Core, official DLC and Singularity: Core. Check both worktables, Aurora research facilities, Void Miner output placement and stock counting, and weapon/turret fire. Automated checks do not replace these gameplay and rendering checks.
+
+## Technical cleanup
+
+- Corrected workgiver/building/research links and removed references to missing recipes.
+- Removed unreachable manual-miner recipe/job code and nanofabricator code for buildings that are absent from this mod. The old map-component type remains as a harmless compatibility shim for saves.
+- Restored kinetic damage using the vanilla injury worker and replaced missing weapon sounds with vanilla sounds. This does not implement an additional kinetic slowdown debuff; that remains a mechanics/design task.
+- Corrected the toxic-protection patch and moved workgivers, sound defs and facility patches into their corresponding folders.
+- Void Miner honors manual pauses, waits for power after target selection, retains finished output if placement is blocked, emits complete batches across multiple stacks, counts single-gene packs by their contents, and preserves cycle duration across save/load.
+- Cached drawing resources and product lists, staggered stock checks every 250 ticks, limited production-list drawing to visible rows, and removed settings writes during every UI frame.
+- Added English/Russian interface strings with namespaced keys. Fixed the package ID to `vazyan.singularitycore`; enable that entry again when using a config that stored the old invalid ID.
+
+Existing prices, damage amounts and armor values are retained. The atomic manipulator uses vanilla Fabrication as a temporary prerequisite until the full progression is designed. The singularity projector has a small forced-miss radius because the 1.6 engine requires that setting for explosive projectiles.
